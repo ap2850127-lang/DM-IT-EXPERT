@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DM IT Expert | Digital growth, made practical</title>
+  <meta name="description" content="DM IT Expert connects paid advertising, conversion tracking, high-converting websites, CRM lead automation, and free marketing tools for businesses in Australia, Bangladesh, and worldwide." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (700, 800) & Inter (400, 500, 600) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#0B1120',
+              900: '#111827',
+              800: '#1E293B',
+            },
+            offwhite: '#F8FAFC',
+            brandblue: '#2563EB',
+            signal: '#FF5A1F',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Subtle Geometric Grid Background */
+    .bg-geo-grid {
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .dark .bg-geo-grid {
+      background-image:
+        linear-gradient(to right, rgba(30, 41, 59, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Desktop Dropdown Smooth Open + 180deg Chevron Rotation */
+    .nav-dropdown .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    }
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown.open .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown .drop-chevron {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-dropdown:hover .drop-chevron,
+    .nav-dropdown.open .drop-chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Smooth View & Tool Tab Transitions */
+    .view-section,
+    .tool-panel {
+      display: none;
+      animation: fadeSlide 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .view-section.active,
+    .tool-panel.active {
+      display: block;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Custom Range Sliders */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 9999px;
+      background: #CBD5E1;
+      outline: none;
+    }
+    .dark input[type="range"] {
+      background: #1E293B;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #FF5A1F;
+      cursor: pointer;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(255, 90, 31, 0.4);
+    }
+    .dark input[type="range"]::-webkit-slider-thumb {
+      border-color: #0B1120;
+    }
+
+    /* Clean Number Inputs */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] dark:bg-[#0B1120] text-[#0B1120] dark:text-[#F8FAFC] font-sans antialiased selection:bg-[#2563EB] selection:text-white flex flex-col min-h-screen transition-colors duration-200">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY HEADER WITH DROPDOWN MENUS (Free Tools ⌄, Services ⌄, etc.) -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-[#0B1120]/95 backdrop-blur-md border-b border-slate-200 dark:border-[#1E293B] transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+
+      <!-- Left: Custom Flat SVG Logo "The Upward Pivot" -->
+      <button type="button" onclick="showView('home')" class="flex items-center shrink-0 focus:outline-none group" aria-label="DM IT Expert Home">
+        <svg width="190" height="42" viewBox="0 0 245 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 sm:h-10 w-auto">
+          <!-- "DM" -->
+          <text x="0" y="34" class="fill-[#0B1120] dark:fill-[#F8FAFC]" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+          <!-- Electric Royal Blue "IT" Block + Upward Pivot Growth Arrow -->
+          <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+          <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+          <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#2563EB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- "EXPERT" -->
+          <text x="98" y="34" class="fill-[#0B1120] dark:fill-[#F8FAFC]" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+          <!-- Tagline -->
+          <text x="1" y="48" class="fill-slate-500 dark:fill-slate-400" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+        </svg>
+      </button>
+
+      <!-- Center: Desktop Navigation Bar (Exact 7 Items in Order) -->
+      <nav class="hidden xl:flex items-center gap-1" aria-label="Main Navigation">
+
+        <!-- 1. Home -->
+        <button type="button" onclick="showView('home')" data-nav="home" class="nav-item px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition">
+          Home
+        </button>
+
+        <!-- 2. Paid Tool -->
+        <button type="button" onclick="showView('paid-tool')" data-nav="paid-tool" class="nav-item px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition">
+          Paid Tool
+        </button>
+
+        <!-- 3. Services ⌄ Dropdown -->
+        <div class="nav-dropdown relative">
+          <button type="button" onclick="toggleDesktopDropdown(this)" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition inline-flex items-center gap-1.5">
+            <span>Services</span>
+            <i data-lucide="chevron-down" class="drop-chevron w-4 h-4 text-slate-400"></i>
+          </button>
+          <div class="dropdown-menu absolute left-0 top-full pt-2.5 w-72 z-50">
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl shadow-2xl p-2 space-y-0.5">
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="megaphone" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">Paid Advertising</span>
+              </button>
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="activity" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">Tracking &amp; Analytics</span>
+              </button>
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="layout-template" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">Websites &amp; Landing Pages</span>
+              </button>
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="clapperboard" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">Content &amp; Creative</span>
+              </button>
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="workflow" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">CRM &amp; Lead Automation</span>
+              </button>
+              <button type="button" onclick="goToHomeSection('home-services')" class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition">
+                <i data-lucide="bar-chart-3" class="w-4 h-4 text-[#2563EB] shrink-0"></i>
+                <span class="text-sm font-medium text-[#0B1120] dark:text-slate-100">Strategy &amp; Reporting</span>
+              </button>
+              <div class="pt-1 mt-1 border-t border-slate-100 dark:border-[#1E293B]">
+                <a href="services.html" class="flex items-center justify-between px-3.5 py-2 rounded-xl text-xs font-bold text-[#2563EB] hover:bg-[#2563EB]/10 transition">
+                  <span>Open Full Services Page</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Social ⌄ Dropdown -->
+        <div class="nav-dropdown relative">
+          <button type="button" onclick="toggleDesktopDropdown(this)" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition inline-flex items-center gap-1.5">
+            <span>Social</span>
+            <i data-lucide="chevron-down" class="drop-chevron w-4 h-4 text-slate-400"></i>
+          </button>
+          <div class="dropdown-menu absolute left-0 top-full pt-2.5 w-48 z-50">
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl shadow-2xl p-2 space-y-0.5">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] text-sm font-medium text-[#0B1120] dark:text-slate-100 transition">
+                <i data-lucide="facebook" class="w-4 h-4 text-[#2563EB]"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] text-sm font-medium text-[#0B1120] dark:text-slate-100 transition">
+                <i data-lucide="instagram" class="w-4 h-4 text-[#FF5A1F]"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] text-sm font-medium text-[#0B1120] dark:text-slate-100 transition">
+                <i data-lucide="linkedin" class="w-4 h-4 text-[#2563EB]"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] text-sm font-medium text-[#0B1120] dark:text-slate-100 transition">
+                <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Free Tools ⌄ HIGHLIGHTED Dropdown (Exact 3 Tools from Reference) -->
+        <div class="nav-dropdown relative">
+          <button type="button" onclick="toggleDesktopDropdown(this)" data-nav="free-tools" class="nav-item px-3.5 py-2 rounded-xl text-sm font-semibold text-[#2563EB] bg-[#2563EB]/10 dark:bg-[#2563EB]/15 hover:bg-[#2563EB]/20 border border-[#2563EB]/25 transition inline-flex items-center gap-1.5">
+            <span>Free Tools</span>
+            <i data-lucide="chevron-down" class="drop-chevron w-4 h-4 text-[#2563EB]"></i>
+          </button>
+          <div class="dropdown-menu absolute left-0 top-full pt-2.5 w-76 sm:w-80 z-50">
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl shadow-2xl p-2 divide-y divide-slate-100 dark:divide-[#1E293B]">
+              <!-- Tool 1 -->
+              <button type="button" onclick="openFreeTool('ad-budget-planner')" class="w-full text-left flex items-start gap-3 px-3.5 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition group">
+                <div class="w-9 h-9 rounded-xl bg-[#2563EB]/10 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition">
+                  <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#0B1120] dark:text-white">Ad budget planner</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Forecast clicks, leads, ROAS &amp; 70/20/10 split</p>
+                </div>
+              </button>
+
+              <!-- Tool 2 -->
+              <button type="button" onclick="openFreeTool('utm-link-builder')" class="w-full text-left flex items-start gap-3 px-3.5 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition group">
+                <div class="w-9 h-9 rounded-xl bg-[#2563EB]/10 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition">
+                  <i data-lucide="link-2" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#0B1120] dark:text-white">UTM link builder</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Generate clean GA4 &amp; ad tracking URLs</p>
+                </div>
+              </button>
+
+              <!-- Tool 3 -->
+              <button type="button" onclick="openFreeTool('lead-conversion-calculator')" class="w-full text-left flex items-start gap-3 px-3.5 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-[#1E293B] transition group">
+                <div class="w-9 h-9 rounded-xl bg-[#FF5A1F]/10 text-[#FF5A1F] group-hover:bg-[#FF5A1F] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-[#0B1120] dark:text-white">Lead conversion calculator</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Model funnel CPA, revenue &amp; +5% close uplift</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Who we are -->
+        <button type="button" onclick="goToHomeSection('home-about')" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition">
+          Who we are
+        </button>
+
+        <!-- 7. Blog -->
+        <button type="button" onclick="showView('blog')" data-nav="blog" class="nav-item px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0B1120] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#111827] transition">
+          Blog
+        </button>
+
+      </nav>
+
+      <!-- Right Side: Circular Dark/Light Toggle + Signal Orange Contact Button + Mobile Hamburger -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <!-- Circular Dark/Light Mode Toggle -->
+        <button id="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle Dark or Light Mode" class="w-10 h-10 rounded-full border border-slate-200 dark:border-[#1E293B] bg-white dark:bg-[#111827] hover:border-[#2563EB] text-slate-700 dark:text-amber-400 flex items-center justify-center transition shadow-sm">
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+        </button>
+
+        <!-- Primary Contact CTA (#FF5A1F) -->
+        <button type="button" onclick="goToHomeSection('home-contact')" class="bg-[#FF5A1F] hover:bg-[#e54b14] text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition shadow-lg shadow-[#FF5A1F]/20 inline-flex items-center gap-1.5">
+          <span>Contact</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" aria-expanded="false" class="xl:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] text-slate-700 dark:text-slate-200 transition">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- RESPONSIVE MOBILE DRAWER WITH INTERACTIVE DROP-ARROW ACCORDIONS     -->
+    <!-- =================================================================== -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white dark:bg-[#111827] border-b border-slate-200 dark:border-[#1E293B] px-4 pt-3 pb-6 max-h-[82vh] overflow-y-auto">
+      <div class="flex flex-col space-y-1.5">
+
+        <button type="button" onclick="showView('home'); toggleMobileMenu();" class="text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1E293B]">Home</button>
+        <button type="button" onclick="showView('paid-tool'); toggleMobileMenu();" class="text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1E293B]">Paid Tool</button>
+
+        <!-- Mobile Accordion 1: Services ⌄ -->
+        <div class="rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] overflow-hidden">
+          <button type="button" onclick="toggleMobileAccordion('mob-services', 'chev-services')" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-slate-100 flex items-center justify-between">
+            <span>Services</span>
+            <i id="chev-services" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="mob-services" class="hidden px-2 pb-2 space-y-1">
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Paid Advertising</button>
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Tracking &amp; Analytics</button>
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Websites &amp; Landing Pages</button>
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Content &amp; Creative</button>
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">CRM &amp; Lead Automation</button>
+            <button type="button" onclick="goToHomeSection('home-services'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Strategy &amp; Reporting</button>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 2: Social ⌄ -->
+        <div class="rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] overflow-hidden">
+          <button type="button" onclick="toggleMobileAccordion('mob-social', 'chev-social')" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 dark:text-slate-100 flex items-center justify-between">
+            <span>Social</span>
+            <i id="chev-social" data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div id="mob-social" class="hidden px-2 pb-2 space-y-1">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Facebook</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">Instagram</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">LinkedIn</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 rounded-lg text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-[#1E293B]">YouTube</a>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 3: Free Tools ⌄ (Expanded by default for quick discovery) -->
+        <div class="rounded-xl bg-[#2563EB]/5 dark:bg-[#0B1120] border border-[#2563EB]/30 overflow-hidden">
+          <button type="button" onclick="toggleMobileAccordion('mob-tools', 'chev-tools')" class="w-full px-4 py-3 text-left text-sm font-bold text-[#2563EB] flex items-center justify-between">
+            <span>Free Tools</span>
+            <i id="chev-tools" data-lucide="chevron-down" class="w-4 h-4 text-[#2563EB] transition-transform duration-200 rotate-180"></i>
+          </button>
+          <div id="mob-tools" class="px-2 pb-2 space-y-1">
+            <button type="button" onclick="openFreeTool('ad-budget-planner'); toggleMobileMenu();" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-[#1E293B] flex items-center gap-2.5">
+              <i data-lucide="pie-chart" class="w-4 h-4 text-[#2563EB]"></i>
+              <span>Ad budget planner</span>
+            </button>
+            <button type="button" onclick="openFreeTool('utm-link-builder'); toggleMobileMenu();" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-[#1E293B] flex items-center gap-2.5">
+              <i data-lucide="link-2" class="w-4 h-4 text-[#2563EB]"></i>
+              <span>UTM link builder</span>
+            </button>
+            <button type="button" onclick="openFreeTool('lead-conversion-calculator'); toggleMobileMenu();" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-[#1E293B] flex items-center gap-2.5">
+              <i data-lucide="trending-up" class="w-4 h-4 text-[#FF5A1F]"></i>
+              <span>Lead conversion calculator</span>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" onclick="goToHomeSection('home-about'); toggleMobileMenu();" class="text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1E293B]">Who we are</button>
+        <button type="button" onclick="showView('blog'); toggleMobileMenu();" class="text-left px-4 py-3 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1E293B]">Blog</button>
+        <button type="button" onclick="goToHomeSection('home-contact'); toggleMobileMenu();" class="mt-2 px-4 py-3.5 rounded-xl text-sm font-semibold bg-[#FF5A1F] text-white text-center">Contact →</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: COMPLETE HOMEPAGE                                             -->
+  <!-- ===================================================================== -->
+  <main id="view-home" class="view-section active flex-1">
+
+    <!-- 1A. Hero Section -->
+    <section class="relative bg-[#F8FAFC] dark:bg-[#0B1120] bg-geo-grid border-b border-slate-200 dark:border-[#1E293B] pt-14 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+          <!-- Left Copy -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-[#2563EB]"></span>
+              <span>Australia · Bangladesh · Worldwide</span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0B1120] dark:text-white tracking-tight leading-[1.08]">
+              Digital growth, <span class="text-[#2563EB]">made practical.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+              DM IT Expert connects paid advertising, conversion creative, server-side tracking, and automated lead follow-up into one clear, measurable revenue system.
+            </p>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-wrap items-center gap-4 pt-1">
+              <button type="button" onclick="goToHomeSection('home-contact')" class="bg-[#FF5A1F] hover:bg-[#e54b14] text-white px-7 py-4 rounded-xl font-semibold text-sm sm:text-base transition shadow-xl shadow-[#FF5A1F]/20 inline-flex items-center gap-2">
+                <span>Build your growth plan</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <button type="button" onclick="openFreeTool('ad-budget-planner')" class="px-6 py-4 rounded-xl bg-white dark:bg-[#111827] hover:border-[#2563EB] border border-slate-200 dark:border-[#1E293B] text-[#0B1120] dark:text-white font-semibold text-sm sm:text-base transition inline-flex items-center gap-2 shadow-sm">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-[#2563EB]"></i>
+                <span>Try Free Tools</span>
+              </button>
+            </div>
+
+            <!-- Trust Strip -->
+            <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-200 dark:border-[#1E293B]">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 dark:border-transparent text-[#0B1120] font-display font-extrabold flex items-center justify-center text-lg shadow-sm">G</div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[#FF5A1F] text-sm tracking-tight">★★★★★</span>
+                    <span class="font-display font-bold text-sm text-[#0B1120] dark:text-white">5.0</span>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Verified Google Rating</p>
+                </div>
+              </div>
+              <div class="h-8 w-px bg-slate-200 dark:bg-[#1E293B] hidden sm:block"></div>
+              <div>
+                <p class="font-display font-bold text-sm text-[#0B1120] dark:text-white">100% Account Ownership</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Your ads, pixels &amp; data stay yours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Connected System Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#0B1120] text-white border border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-2xl">
+              <div class="flex items-center justify-between pb-5 border-b border-[#1E293B]">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">System Architecture</p>
+                  <h2 class="font-display font-bold text-lg text-white mt-0.5">Connected Growth Engine</h2>
+                </div>
+                <span class="px-3 py-1 rounded-lg bg-[#FF5A1F]/15 text-[#FF5A1F] font-display font-bold text-xs">3X ROAS Target</span>
+              </div>
+
+              <div class="space-y-3.5 my-6">
+                <div class="p-4 rounded-2xl bg-[#111827] border border-[#1E293B] flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-[#2563EB]/15 text-[#2563EB] flex items-center justify-center">
+                      <i data-lucide="megaphone" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-white">Paid Acquisition</p>
+                      <p class="text-xs text-slate-400">Meta &amp; Google Ads</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-semibold text-[#2563EB]">Active</span>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-[#111827] border border-[#1E293B] flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-[#2563EB]/15 text-[#2563EB] flex items-center justify-center">
+                      <i data-lucide="activity" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-white">Server-Side Tracking</p>
+                      <p class="text-xs text-slate-400">Pixel, CAPI &amp; GTM</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-semibold text-emerald-400">9.2/10 Match</span>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-[#111827] border border-[#1E293B] flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-[#FF5A1F]/15 text-[#FF5A1F] flex items-center justify-center">
+                      <i data-lucide="workflow" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-white">CRM &amp; Lead Automation</p>
+                      <p class="text-xs text-slate-400">Instant WhatsApp &amp; Email</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-semibold text-[#FF5A1F]">&lt; 60s Reply</span>
+                </div>
+              </div>
+
+              <!-- Quick Free Tools Launchers -->
+              <div class="grid grid-cols-3 gap-2 pt-2">
+                <button type="button" onclick="openFreeTool('ad-budget-planner')" class="py-2.5 px-2 rounded-xl bg-[#111827] hover:bg-[#2563EB] border border-[#1E293B] text-[11px] font-semibold text-slate-200 hover:text-white transition text-center">Budget Plan</button>
+                <button type="button" onclick="openFreeTool('utm-link-builder')" class="py-2.5 px-2 rounded-xl bg-[#111827] hover:bg-[#2563EB] border border-[#1E293B] text-[11px] font-semibold text-slate-200 hover:text-white transition text-center">UTM Builder</button>
+                <button type="button" onclick="openFreeTool('lead-conversion-calculator')" class="py-2.5 px-2 rounded-xl bg-[#111827] hover:bg-[#FF5A1F] border border-[#1E293B] text-[11px] font-semibold text-slate-200 hover:text-white transition text-center">Lead Calc</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 1B. 6 Core Services Grid -->
+    <section id="home-services" class="bg-white dark:bg-[#111827] py-20 lg:py-24 border-b border-slate-200 dark:border-[#1E293B]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div class="max-w-2xl">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#2563EB]">Core Services</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white mt-2">Six practical capabilities built to drive leads &amp; sales</h2>
+          </div>
+          <a href="services.html" class="text-sm font-semibold text-[#2563EB] hover:text-[#FF5A1F] transition inline-flex items-center gap-1.5">
+            <span>View full Services page</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="megaphone" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Paid Advertising</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Meta (Facebook &amp; Instagram) and Google Ads structured around qualified leads, bookings, and profitable acquisition.</p>
+          </div>
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="activity" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Tracking &amp; Analytics</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Accurate Meta Pixel, Conversions API (CAPI), Google Tag Manager, and GA4 setups so every ad dollar is attributed cleanly.</p>
+          </div>
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="layout-template" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Websites &amp; Landing Pages</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Fast, mobile-first business websites and dedicated landing pages engineered to convert cold traffic into real enquiries.</p>
+          </div>
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="clapperboard" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Content &amp; Creative</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Direct-response ad visuals, cohesive social media systems, and short-form videos built to stop the scroll.</p>
+          </div>
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="workflow" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">CRM &amp; Lead Automation</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Automated WhatsApp, SMS, and email follow-up pipelines so every incoming lead gets a fast reply and zero prospects go cold.</p>
+          </div>
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] hover:border-[#2563EB] rounded-2xl p-7 transition">
+            <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 text-[#2563EB] flex items-center justify-center mb-5"><i data-lucide="bar-chart-3" class="w-6 h-6"></i></div>
+            <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Strategy &amp; Reporting</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Plain-English performance dashboards and weekly optimization plans focused on cost per lead, pipeline value, and real ROI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1C. Trustindex-Style 5-Star Google Reviews -->
+    <section class="bg-[#0B1120] text-white py-20 lg:py-24 border-b border-[#1E293B]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#FF5A1F]">Verified Social Proof</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-2">What our clients say on Google</h2>
+          </div>
+          <div class="bg-[#111827] border border-[#1E293B] rounded-2xl px-6 py-4 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-white text-[#0B1120] font-display font-extrabold flex items-center justify-center text-lg">G</div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-display font-extrabold text-sm text-white tracking-wide">EXCELLENT</span>
+                <span class="text-[#FF5A1F] text-sm">★★★★★</span>
+              </div>
+              <p class="text-xs text-slate-400">Based on verified Google Reviews · 5.0 / 5.0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[#FF5A1F] text-sm">★★★★★</span>
+                <span class="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#2563EB]/15 text-[#2563EB]">Verified Google</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">"DM IT Expert revamped our paid advertising and conversion tracking from the ground up. Their Meta CAPI setup and creative testing gave us clean attribution and a noticeable lift in qualified store sales."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-[#1E293B]">
+              <div class="w-10 h-10 rounded-full bg-[#2563EB] text-white font-display font-bold text-sm flex items-center justify-center">FU</div>
+              <div>
+                <p class="font-display font-bold text-sm text-white">Floban USA</p>
+                <p class="text-xs text-slate-400">E-Commerce Brand · USA</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[#FF5A1F] text-sm">★★★★★</span>
+                <span class="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#2563EB]/15 text-[#2563EB]">Verified Google</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">"Practical, fast, and transparent. Instead of confusing jargon, they built a clear lead generation funnel for our digital products and delivered steady daily orders with full visibility into our ad spend."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-[#1E293B]">
+              <div class="w-10 h-10 rounded-full bg-[#2563EB] text-white font-display font-bold text-sm flex items-center justify-center">CT</div>
+              <div>
+                <p class="font-display font-bold text-sm text-white">Cloud Tools store</p>
+                <p class="text-xs text-slate-400">Digital Products &amp; SaaS</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[#FF5A1F] text-sm">★★★★★</span>
+                <span class="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#2563EB]/15 text-[#2563EB]">Verified Google</span>
+              </div>
+              <p class="text-sm text-slate-300 leading-relaxed">"Very reliable team for both web development and Meta Ads. Communication on WhatsApp is always prompt, deadlines are respected, and they genuinely care about getting real business results."</p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-[#1E293B]">
+              <div class="w-10 h-10 rounded-full bg-[#2563EB] text-white font-display font-bold text-sm flex items-center justify-center">KM</div>
+              <div>
+                <p class="font-display font-bold text-sm text-white">Kawsar MD</p>
+                <p class="text-xs text-slate-400">Business Owner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1D. Why Choose DM IT Expert & Who We Are -->
+    <section id="home-about" class="bg-[#F8FAFC] dark:bg-[#0B1120] py-20 lg:py-24 border-b border-slate-200 dark:border-[#1E293B]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+        <!-- Why Choose DM IT Expert -->
+        <div>
+          <div class="max-w-2xl mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#2563EB]">Why Choose DM IT Expert</span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white mt-2">Built around accountability, clarity &amp; ownership</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-7">
+              <i data-lucide="shield-check" class="w-8 h-8 text-[#2563EB] mb-4"></i>
+              <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">100% Client Ownership</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Your ad accounts, Meta Pixel, Google Tag Manager, website files, and CRM data always stay under your direct ownership.</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-7">
+              <i data-lucide="message-square" class="w-8 h-8 text-[#FF5A1F] mb-4"></i>
+              <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Direct WhatsApp Access</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Talk directly to the media buyers and engineers working on your account—plain-English updates without agency layers.</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-7">
+              <i data-lucide="target" class="w-8 h-8 text-[#2563EB] mb-4"></i>
+              <h3 class="font-display font-bold text-xl text-[#0B1120] dark:text-white mb-2">Practical Measurement</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">We measure qualified leads, booked appointments, and revenue impact—never hiding behind vanity impressions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Who We Are Split Card -->
+        <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-3xl p-8 sm:p-12 grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#FF5A1F]">Who We Are</span>
+            <h2 class="font-display font-extrabold text-3xl text-[#0B1120] dark:text-white">Your practical growth partner across Australia, Bangladesh &amp; Worldwide</h2>
+            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              DM IT Expert combines international marketing standards with a hands-on engineering, tracking, and creative team. Whether you're scaling service leads in Australia, running e-commerce in the US, or building a modern brand online, we act as your dedicated growth desk.
+            </p>
+          </div>
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-5">
+              <p class="font-display font-extrabold text-3xl text-[#FF5A1F]">5.0★</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Google Verified Rating</p>
+            </div>
+            <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-5">
+              <p class="font-display font-extrabold text-3xl text-[#2563EB]">3+</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Global Regions Served</p>
+            </div>
+            <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-5 col-span-2">
+              <p class="font-display font-bold text-sm text-[#0B1120] dark:text-white">Cross-Zone Support</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Australian desk (+61 480 820 298) backed by our Dhaka production studio.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 1E. Interactive FAQs Accordion -->
+    <section class="bg-white dark:bg-[#111827] py-20 lg:py-24 border-b border-slate-200 dark:border-[#1E293B]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#2563EB]">Good to know</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white mt-2">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl overflow-hidden">
+            <button type="button" onclick="toggleFaq(0)" class="w-full px-6 py-5 text-left flex items-center justify-between font-display font-bold text-base text-[#0B1120] dark:text-white">
+              <span>1. Do I keep full ownership of my ad accounts, pixel, and website?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-[#2563EB] faq-icon transition-transform shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Yes, 100%. Meta Business Manager, Google Ads, GTM containers, landing pages, and CRM pipelines stay under your direct admin ownership.
+            </div>
+          </div>
+
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl overflow-hidden">
+            <button type="button" onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left flex items-center justify-between font-display font-bold text-base text-[#0B1120] dark:text-white">
+              <span>2. How quickly can we launch our first campaign or landing page?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-[#2563EB] faq-icon transition-transform shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Tracking setups and paid ad campaigns typically launch within 5–7 business days. Custom landing pages and websites launch within 10–14 days depending on scope.
+            </div>
+          </div>
+
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl overflow-hidden">
+            <button type="button" onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left flex items-center justify-between font-display font-bold text-base text-[#0B1120] dark:text-white">
+              <span>3. Are the Free Tools in the menu completely free to use?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-[#2563EB] faq-icon transition-transform shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Yes! Our Ad Budget Planner, UTM Link Builder, and Lead Conversion Calculator are 100% free with zero signup required.
+            </div>
+          </div>
+
+          <div class="bg-[#F8FAFC] dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] rounded-2xl overflow-hidden">
+            <button type="button" onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left flex items-center justify-between font-display font-bold text-base text-[#0B1120] dark:text-white">
+              <span>4. How do we get started with DM IT Expert?</span>
+              <i data-lucide="plus" class="w-5 h-5 text-[#2563EB] faq-icon transition-transform shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Message us directly on WhatsApp (+61 480 820 298) or email contact@dmitexpert.com. We'll review your current setup and share a practical growth roadmap with zero obligation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1F. High-Conversion WhatsApp CTA Banner -->
+    <section id="home-contact" class="bg-[#F8FAFC] dark:bg-[#0B1120] py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto bg-[#0B1120] border border-[#1E293B] rounded-3xl p-8 sm:p-14 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-2xl">
+        <div class="max-w-2xl">
+          <span class="inline-block px-3 py-1 rounded-full bg-[#FF5A1F]/15 text-[#FF5A1F] text-xs font-bold uppercase tracking-wider mb-3">Let's Talk</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white leading-tight">
+            Ready to build a practical digital growth system?
+          </h2>
+          <p class="text-slate-300 mt-3 text-base">
+            Chat directly with our team on WhatsApp or email us for a free 15-minute funnel &amp; tracking audit.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3.5 shrink-0">
+          <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%27d%20like%20to%20build%20a%20practical%20growth%20plan." target="_blank" rel="noopener noreferrer" class="bg-[#FF5A1F] hover:bg-[#e54b14] text-white px-7 py-4 rounded-xl font-semibold text-sm sm:text-base transition shadow-lg shadow-[#FF5A1F]/20 inline-flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp: +61 480 820 298</span>
+          </a>
+          <a href="mailto:contact@dmitexpert.com" class="px-6 py-4 rounded-xl bg-[#111827] hover:bg-[#1E293B] border border-[#1E293B] text-white font-semibold text-sm sm:text-base transition inline-flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-[#2563EB]"></i>
+            <span>contact@dmitexpert.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: INTEGRATED LIVE FREE TOOLS WORKSPACE                          -->
+  <!-- ===================================================================== -->
+  <section id="view-free-tools" class="view-section flex-1">
+
+    <!-- Free Tools Header + Back to Home + Segmented Tabs -->
+    <div class="bg-[#F8FAFC] dark:bg-[#0B1120] bg-geo-grid border-b border-slate-200 dark:border-[#1E293B] pt-10 pb-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <button type="button" onclick="showView('home')" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#2563EB] hover:text-[#FF5A1F] transition">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to Home</span>
+          </button>
+          <a href="free-tools.html" class="text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-[#2563EB] transition inline-flex items-center gap-1">
+            <span>Open Standalone Free Tools Page</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white tracking-tight">
+          Free Digital Marketing <span class="text-[#2563EB]">Tools</span>
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl">
+          Switch between our three live utilities to plan ad spend, build clean UTM links, or model your lead conversion funnel.
+        </p>
+
+        <!-- 3-Tab Tool Switcher -->
+        <div class="mt-6 p-1.5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] shadow-sm grid grid-cols-1 sm:grid-cols-3 gap-1.5">
+          <button type="button" onclick="switchFreeToolTab('ad-budget-planner')" data-ftab="ad-budget-planner" class="ftab-btn px-4 py-3 rounded-xl text-sm font-display font-bold flex items-center justify-center gap-2 transition">
+            <i data-lucide="pie-chart" class="w-4 h-4"></i>
+            <span>Ad budget planner</span>
+          </button>
+          <button type="button" onclick="switchFreeToolTab('utm-link-builder')" data-ftab="utm-link-builder" class="ftab-btn px-4 py-3 rounded-xl text-sm font-display font-bold flex items-center justify-center gap-2 transition">
+            <i data-lucide="link-2" class="w-4 h-4"></i>
+            <span>UTM link builder</span>
+          </button>
+          <button type="button" onclick="switchFreeToolTab('lead-conversion-calculator')" data-ftab="lead-conversion-calculator" class="ftab-btn px-4 py-3 rounded-xl text-sm font-display font-bold flex items-center justify-center gap-2 transition">
+            <i data-lucide="trending-up" class="w-4 h-4"></i>
+            <span>Lead conversion calculator</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calculators Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+
+      <!-- TOOL 1: AD BUDGET PLANNER -->
+      <div id="tool-ad-budget-planner" class="tool-panel active">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-[#1E293B]">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">Tool 01</span>
+                <h2 class="font-display font-extrabold text-xl sm:text-2xl text-[#0B1120] dark:text-white">Ad budget planner</h2>
+              </div>
+              <div class="inline-flex rounded-xl bg-slate-100 dark:bg-[#0B1120] p-1 border border-slate-200 dark:border-[#1E293B]">
+                <button type="button" onclick="setBudgetCurrency('USD')" data-bcurr="USD" class="bcurr-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">USD $</button>
+                <button type="button" onclick="setBudgetCurrency('AUD')" data-bcurr="AUD" class="bcurr-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">AUD A$</button>
+                <button type="button" onclick="setBudgetCurrency('BDT')" data-bcurr="BDT" class="bcurr-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">BDT ৳</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">Platform Presets</label>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" onclick="setBudgetPlatform('meta')" data-plat="meta" class="plat-btn py-2.5 rounded-xl text-xs font-bold border transition">Meta Ads</button>
+                <button type="button" onclick="setBudgetPlatform('google')" data-plat="google" class="plat-btn py-2.5 rounded-xl text-xs font-bold border transition">Google Ads</button>
+                <button type="button" onclick="setBudgetPlatform('tiktok')" data-plat="tiktok" class="plat-btn py-2.5 rounded-xl text-xs font-bold border transition">TikTok Ads</button>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label for="bp-budget-num" class="text-sm font-semibold">Monthly Ad Budget</label>
+                <div class="flex items-center rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] px-3 py-1.5">
+                  <span class="bp-sym text-xs font-bold text-slate-400 mr-1">$</span>
+                  <input id="bp-budget-num" type="number" min="50" value="2000" oninput="syncBudget('budget','num')" class="w-24 bg-transparent text-right font-display font-bold text-sm focus:outline-none" />
+                </div>
+              </div>
+              <input id="bp-budget-range" type="range" min="200" max="20000" step="100" value="2000" oninput="syncBudget('budget','range')" class="w-full" />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label for="bp-cpc-num" class="text-sm font-semibold">Estimated CPC</label>
+                <div class="flex items-center rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] px-3 py-1.5">
+                  <span class="bp-sym text-xs font-bold text-slate-400 mr-1">$</span>
+                  <input id="bp-cpc-num" type="number" min="0.1" step="0.1" value="1.2" oninput="syncBudget('cpc','num')" class="w-24 bg-transparent text-right font-display font-bold text-sm focus:outline-none" />
+                </div>
+              </div>
+              <input id="bp-cpc-range" type="range" min="0.2" max="10" step="0.1" value="1.2" oninput="syncBudget('cpc','range')" class="w-full" />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label for="bp-cvr-num" class="text-sm font-semibold">Conversion Rate (%)</label>
+                <div class="flex items-center rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] px-3 py-1.5">
+                  <input id="bp-cvr-num" type="number" min="0.5" max="40" step="0.5" value="5" oninput="syncBudget('cvr','num')" class="w-16 bg-transparent text-right font-display font-bold text-sm focus:outline-none" />
+                  <span class="text-xs font-bold text-slate-400 ml-1">%</span>
+                </div>
+              </div>
+              <input id="bp-cvr-range" type="range" min="0.5" max="25" step="0.5" value="5" oninput="syncBudget('cvr','range')" class="w-full" />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label for="bp-deal-num" class="text-sm font-semibold">Avg. Customer Value</label>
+                <div class="flex items-center rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] px-3 py-1.5">
+                  <span class="bp-sym text-xs font-bold text-slate-400 mr-1">$</span>
+                  <input id="bp-deal-num" type="number" min="10" step="10" value="150" oninput="syncBudget('deal','num')" class="w-24 bg-transparent text-right font-display font-bold text-sm focus:outline-none" />
+                </div>
+              </div>
+              <input id="bp-deal-range" type="range" min="20" max="3000" step="10" value="150" oninput="syncBudget('deal','range')" class="w-full" />
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 bg-[#0B1120] text-white border border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Live Forecast · <span id="bp-plat-label" class="text-sky-400">Meta Ads</span></p>
+                <h3 class="font-display font-extrabold text-xl mt-0.5">Projected Monthly Output</h3>
+              </div>
+              <div class="px-4 py-2 rounded-2xl bg-[#FF5A1F]/15 border border-[#FF5A1F]/40 text-right">
+                <p class="text-[10px] font-bold uppercase text-[#FF5A1F]">Est. ROAS</p>
+                <p id="bp-roas" class="font-display font-extrabold text-2xl text-[#FF5A1F]">6.2x</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4">
+                <p class="text-xs text-slate-400">Est. Clicks</p>
+                <p id="bp-clicks" class="font-display font-extrabold text-lg text-white mt-1">1,667</p>
+              </div>
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4">
+                <p class="text-xs text-slate-400">Est. Leads</p>
+                <p id="bp-leads" class="font-display font-extrabold text-lg text-[#2563EB] mt-1">83</p>
+              </div>
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4 col-span-2 sm:col-span-1">
+                <p class="text-xs text-slate-400">Est. Revenue</p>
+                <p id="bp-rev" class="font-display font-extrabold text-lg text-emerald-400 mt-1">$12,450</p>
+              </div>
+            </div>
+
+            <!-- 70 / 20 / 10 Budget Split Bar -->
+            <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-5 space-y-3.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-display font-bold text-white">70 / 20 / 10 Budget Split</span>
+                <span class="text-slate-400">Recommended Allocation</span>
+              </div>
+              <div class="w-full h-3.5 rounded-full overflow-hidden flex bg-[#0B1120]">
+                <div class="w-[70%] bg-[#2563EB]"></div>
+                <div class="w-[20%] bg-sky-400"></div>
+                <div class="w-[10%] bg-[#FF5A1F]"></div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-xs">
+                <div class="bg-[#0B1120] p-2.5 rounded-xl border border-[#1E293B]">
+                  <p class="text-slate-400">70% Cold</p>
+                  <p id="bp-s70" class="font-display font-bold text-white mt-0.5">$1,400</p>
+                </div>
+                <div class="bg-[#0B1120] p-2.5 rounded-xl border border-[#1E293B]">
+                  <p class="text-slate-400">20% Warm</p>
+                  <p id="bp-s20" class="font-display font-bold text-white mt-0.5">$400</p>
+                </div>
+                <div class="bg-[#0B1120] p-2.5 rounded-xl border border-[#1E293B]">
+                  <p class="text-slate-400">10% Test</p>
+                  <p id="bp-s10" class="font-display font-bold text-white mt-0.5">$200</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" onclick="sendBudgetWhatsApp()" class="w-full py-3.5 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm transition shadow-lg shadow-[#FF5A1F]/20">
+              Get Free Campaign Audit on WhatsApp →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 2: UTM LINK BUILDER -->
+      <div id="tool-utm-link-builder" class="tool-panel">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="pb-4 border-b border-slate-200 dark:border-[#1E293B]">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">Tool 02</span>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-[#0B1120] dark:text-white">UTM link builder</h2>
+            </div>
+
+            <div>
+              <label for="utm-url" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Website URL</label>
+              <input id="utm-url" type="url" value="https://www.dmitexpert.com" oninput="buildUtm()" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] text-sm focus:outline-none focus:border-[#2563EB]" />
+            </div>
+
+            <div>
+              <label for="utm-source" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Campaign Source (utm_source)</label>
+              <input id="utm-source" type="text" value="facebook" oninput="buildUtm()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] text-sm focus:outline-none focus:border-[#2563EB]" />
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <button type="button" onclick="setUtmChip('utm-source','facebook')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">facebook</button>
+                <button type="button" onclick="setUtmChip('utm-source','instagram')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">instagram</button>
+                <button type="button" onclick="setUtmChip('utm-source','google')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">google</button>
+                <button type="button" onclick="setUtmChip('utm-source','linkedin')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">linkedin</button>
+                <button type="button" onclick="setUtmChip('utm-source','whatsapp')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">whatsapp</button>
+              </div>
+            </div>
+
+            <div>
+              <label for="utm-medium" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Campaign Medium (utm_medium)</label>
+              <input id="utm-medium" type="text" value="paid_social" oninput="buildUtm()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] text-sm focus:outline-none focus:border-[#2563EB]" />
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <button type="button" onclick="setUtmChip('utm-medium','cpc')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">cpc</button>
+                <button type="button" onclick="setUtmChip('utm-medium','paid_social')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">paid_social</button>
+                <button type="button" onclick="setUtmChip('utm-medium','organic')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">organic</button>
+                <button type="button" onclick="setUtmChip('utm-medium','email')" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#1E293B] hover:bg-[#2563EB] hover:text-white text-xs font-medium transition">email</button>
+              </div>
+            </div>
+
+            <div>
+              <label for="utm-campaign" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">Campaign Name (utm_campaign)</label>
+              <input id="utm-campaign" type="text" value="growth_audit_campaign" oninput="buildUtm()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0B1120] border border-slate-300 dark:border-[#1E293B] text-sm focus:outline-none focus:border-[#2563EB]" />
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 bg-[#0B1120] text-white border border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-extrabold text-xl">Live Generated Tracking URL</h3>
+              <span class="px-2.5 py-1 rounded-lg bg-[#2563EB]/20 text-sky-300 text-xs font-bold">GA4 Clean</span>
+            </div>
+            <div id="utm-output" class="bg-[#111827] border border-[#1E293B] rounded-2xl p-5 font-mono text-xs sm:text-sm break-all leading-relaxed min-h-[100px]"></div>
+            <button type="button" onclick="copyUtm()" class="w-full py-3.5 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm sm:text-base transition shadow-lg shadow-[#FF5A1F]/25 inline-flex items-center justify-center gap-2">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy Tracking URL</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOL 3: LEAD CONVERSION CALCULATOR -->
+      <div id="tool-lead-conversion-calculator" class="tool-panel">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-5 bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-[#1E293B]">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#FF5A1F]">Tool 03</span>
+                <h2 class="font-display font-extrabold text-xl text-[#0B1120] dark:text-white">Lead conversion calculator</h2>
+              </div>
+              <div class="inline-flex rounded-xl bg-slate-100 dark:bg-[#0B1120] p-1 border border-slate-200 dark:border-[#1E293B]">
+                <button type="button" onclick="setLeadCurrency('USD')" data-lcurr="USD" class="lcurr-btn px-2.5 py-1 rounded-lg text-xs font-bold transition">USD</button>
+                <button type="button" onclick="setLeadCurrency('AUD')" data-lcurr="AUD" class="lcurr-btn px-2.5 py-1 rounded-lg text-xs font-bold transition">AUD</button>
+                <button type="button" onclick="setLeadCurrency('BDT')" data-lcurr="BDT" class="lcurr-btn px-2.5 py-1 rounded-lg text-xs font-bold transition">BDT</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-semibold mb-1.5">
+                <label for="lc-spend">Monthly Ad Spend</label>
+                <span id="lc-spend-val" class="text-[#2563EB] font-display font-bold">$2,500</span>
+              </div>
+              <input id="lc-spend" type="range" min="200" max="25000" step="100" value="2500" oninput="calcLead()" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-semibold mb-1.5">
+                <label for="lc-leads">Total Monthly Leads</label>
+                <span id="lc-leads-val" class="text-[#2563EB] font-display font-bold">150</span>
+              </div>
+              <input id="lc-leads" type="range" min="10" max="1000" step="5" value="150" oninput="calcLead()" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-semibold mb-1.5">
+                <label for="lc-qual">Qualified Rate (%)</label>
+                <span id="lc-qual-val" class="text-[#2563EB] font-display font-bold">40%</span>
+              </div>
+              <input id="lc-qual" type="range" min="5" max="100" step="1" value="40" oninput="calcLead()" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-semibold mb-1.5">
+                <label for="lc-close">Close Rate (%)</label>
+                <span id="lc-close-val" class="text-[#2563EB] font-display font-bold">25%</span>
+              </div>
+              <input id="lc-close" type="range" min="5" max="100" step="1" value="25" oninput="calcLead()" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-semibold mb-1.5">
+                <label for="lc-deal">Avg. Deal Value</label>
+                <span id="lc-deal-val" class="text-[#2563EB] font-display font-bold">$800</span>
+              </div>
+              <input id="lc-deal" type="range" min="50" max="5000" step="50" value="800" oninput="calcLead()" class="w-full" />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 bg-[#0B1120] text-white border border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4">
+                <p class="text-xs text-slate-400">Cost Per Lead (CPL)</p>
+                <p id="lc-cpl" class="font-display font-extrabold text-lg text-white mt-1">$16.67</p>
+              </div>
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4">
+                <p class="text-xs text-slate-400">Cost Per Acquisition</p>
+                <p id="lc-cpa" class="font-display font-extrabold text-lg text-white mt-1">$166.67</p>
+              </div>
+              <div class="bg-[#111827] border border-[#1E293B] rounded-2xl p-4 col-span-2 sm:col-span-1">
+                <p class="text-xs text-slate-400">Monthly Revenue</p>
+                <p id="lc-rev" class="font-display font-extrabold text-lg text-emerald-400 mt-1">$12,000</p>
+              </div>
+            </div>
+
+            <div class="bg-[#2563EB]/15 border border-[#2563EB]/40 rounded-2xl p-5 flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shrink-0">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-sky-300">+5% Close Rate Uplift Insight</p>
+                <p id="lc-insight" class="text-sm text-slate-100 mt-1 leading-relaxed"></p>
+              </div>
+            </div>
+
+            <button type="button" onclick="sendLeadWhatsApp()" class="w-full py-3.5 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm transition shadow-lg shadow-[#FF5A1F]/20">
+              Optimize My Funnel on WhatsApp →
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 3: PAID TOOL PREVIEW (Links cleanly to shop.html)                -->
+  <!-- ===================================================================== -->
+  <section id="view-paid-tool" class="view-section flex-1 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <button type="button" onclick="showView('home')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:text-[#FF5A1F] mb-6 transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </button>
+      <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <span class="px-3 py-1 rounded-full bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold uppercase tracking-wider">Paid Tool Shop</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white mt-3">Verified Digital Subscriptions &amp; Pro Tools</h2>
+          <p class="text-slate-600 dark:text-slate-300 mt-3 text-base leading-relaxed">
+            Shop Canva Pro, CapCut Pro Premium, Claude Premium, and Gemini Pro + 5TB Cloud Storage with instant digital delivery and bKash Send Money checkout.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 shrink-0">
+          <a href="shop.html" class="px-7 py-4 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm sm:text-base transition shadow-lg shadow-[#FF5A1F]/20">
+            Open Paid Tool Shop →
+          </a>
+          <a href="cart.html" class="px-6 py-4 rounded-xl bg-slate-100 dark:bg-[#0B1120] border border-slate-200 dark:border-[#1E293B] text-[#0B1120] dark:text-white font-semibold text-sm sm:text-base transition">
+            View Cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 4: BLOG PREVIEW                                                  -->
+  <!-- ===================================================================== -->
+  <section id="view-blog" class="view-section flex-1 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <button type="button" onclick="showView('home')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:text-[#FF5A1F] mb-6 transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </button>
+      <div class="mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#2563EB]">Insights &amp; Guides</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] dark:text-white mt-2">DM IT Expert Blog</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-6 space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">Tracking &amp; CAPI</span>
+          <h3 class="font-display font-bold text-lg text-[#0B1120] dark:text-white">Why Server-Side Meta CAPI Cuts Your Cost Per Lead by 20%+</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">How clean deduplication and high Event Match Quality help Meta's algorithm find better buyers.</p>
+        </article>
+        <article class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-6 space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#FF5A1F]">Paid Ads</span>
+          <h3 class="font-display font-bold text-lg text-[#0B1120] dark:text-white">The 70/20/10 Ad Budget Formula for Service Businesses</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Stop burning budget on untested audiences—use our practical split to scale profitably.</p>
+        </article>
+        <article class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-[#1E293B] rounded-2xl p-6 space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">Automation</span>
+          <h3 class="font-display font-bold text-lg text-[#0B1120] dark:text-white">60-Second WhatsApp Lead Follow-Up That Doubles Bookings</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Connecting Meta Instant Forms directly to automated WhatsApp &amp; CRM pipelines.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER (Deep Navy #0B1120)                                            -->
+  <!-- ===================================================================== -->
+  <footer class="bg-[#0B1120] border-t border-[#1E293B] text-slate-300 pt-14 pb-10 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-12 gap-10 pb-10 border-b border-[#1E293B]">
+        <div class="md:col-span-5 space-y-4">
+          <svg width="180" height="40" viewBox="0 0 245 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 w-auto">
+            <text x="0" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+            <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+            <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+            <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#2563EB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <text x="98" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+            <text x="1" y="48" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+          </svg>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            Digital growth, made practical. Paid advertising, server-side tracking, websites, and CRM automation across Australia, Bangladesh, and worldwide.
+          </p>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-4">Free Tools</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><button type="button" onclick="openFreeTool('ad-budget-planner')" class="hover:text-white transition">Ad budget planner</button></li>
+            <li><button type="button" onclick="openFreeTool('utm-link-builder')" class="hover:text-white transition">UTM link builder</button></li>
+            <li><button type="button" onclick="openFreeTool('lead-conversion-calculator')" class="hover:text-white transition">Lead conversion calculator</button></li>
+            <li><a href="shop.html" class="hover:text-[#FF5A1F] transition">Paid Tool Shop →</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4">
+          <h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-4">Contact</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><a href="https://wa.me/61480820298" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">WhatsApp: +61 480 820 298</a></li>
+            <li><a href="mailto:contact@dmitexpert.com" class="hover:text-[#2563EB] transition">contact@dmitexpert.com</a></li>
+            <li class="text-xs text-slate-500 pt-1">Australia · Bangladesh · Worldwide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <p>© 2026 DM IT Expert. All rights reserved.</p>
+        <p>dmitexpert.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl shadow-emerald-950/40 transition-transform hover:scale-105">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span class="text-sm font-semibold hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- Toast Notification (No alert()) -->
+  <div id="toast" class="fixed bottom-20 right-5 z-50 hidden items-center gap-2.5 bg-[#0B1120] border border-[#2563EB] text-white px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm font-medium">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#FF5A1F] shrink-0"></i>
+    <span id="toast-msg"></span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: DROPDOWNS, THEME, VIEWS & ALL 3 LIVE FREE TOOLS           -->
+  <!-- ===================================================================== -->
+  <script>
+    const WA_PHONE = '61480820298';
+
+    // 1. Dark / Light Mode Toggle
+    function initTheme() {
+      try {
+        const saved = localStorage.getItem('dmit_theme');
+        if (saved === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    }
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('dmit_theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    }
+
+    // 2. Desktop Dropdowns & Mobile Accordions
+    function toggleDesktopDropdown(btn) {
+      const parent = btn.closest('.nav-dropdown');
+      const isOpen = parent.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      if (!isOpen) parent.classList.add('open');
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const hidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!hidden));
+    }
+
+    function toggleMobileAccordion(panelId, chevId) {
+      const panel = document.getElementById(panelId);
+      const chev = document.getElementById(chevId);
+      const hidden = panel.classList.toggle('hidden');
+      chev.style.transform = hidden ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    // 3. View & Free Tool Navigation
+    function showView(viewId) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
+      const target = document.getElementById('view-' + viewId);
+      if (target) target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function goToHomeSection(sectionId) {
+      showView('home');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
+    }
+
+    function openFreeTool(toolKey) {
+      showView('free-tools');
+      switchFreeToolTab(toolKey);
+    }
+
+    function switchFreeToolTab(toolKey) {
+      document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById('tool-' + toolKey);
+      if (panel) panel.classList.add('active');
+
+      document.querySelectorAll('.ftab-btn').forEach(btn => {
+        const active = btn.getAttribute('data-ftab') === toolKey;
+        btn.className = active
+          ? 'ftab-btn px-4 py-3 rounded-xl text-sm font-display font-bold flex items-center justify-center gap-2 transition bg-[#2563EB] text-white shadow-md'
+          : 'ftab-btn px-4 py-3 rounded-xl text-sm font-display font-bold flex items-center justify-center gap-2 transition text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#1E293B]';
+      });
+      lucide.createIcons();
+    }
+
+    // 4. FAQ Accordion
+    function toggleFaq(idx) {
+      const answers = document.querySelectorAll('.faq-answer');
+      const icons = document.querySelectorAll('.faq-icon');
+      answers.forEach((a, i) => {
+        if (i === idx) {
+          a.classList.toggle('hidden');
+          icons[i].style.transform = a.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(45deg)';
+        } else {
+          a.classList.add('hidden');
+          icons[i].style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Shared Currency & Toast Helpers
+    const CURR = {
+      USD: { sym: '$', rate: 1 },
+      AUD: { sym: 'A$', rate: 1.5 },
+      BDT: { sym: '৳', rate: 115 }
+    };
+    function fmtMoney(v, code, dec = null) {
+      const d = dec !== null ? dec : (code === 'BDT' ? 0 : (Math.abs(v) >= 100 ? 0 : 2));
+      return CURR[code].sym + Number(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+    }
+    let toastT = null;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      t.classList.remove('hidden');
+      t.classList.add('flex');
+      clearTimeout(toastT);
+      toastT = setTimeout(() => { t.classList.add('hidden'); t.classList.remove('flex'); }, 2600);
+    }
+
+    // =========================================================================
+    // TOOL 1: AD BUDGET PLANNER
+    // =========================================================================
+    let bpCurr = 'USD';
+    let bpPlat = 'meta';
+    const BP_PLATS = {
+      meta:   { label: 'Meta Ads',   cpcUSD: 1.2, cvr: 5.0 },
+      google: { label: 'Google Ads', cpcUSD: 2.5, cvr: 7.5 },
+      tiktok: { label: 'TikTok Ads', cpcUSD: 0.8, cvr: 3.5 }
+    };
+    const BP_DEFS = {
+      USD: { b: 2000, bMin: 200, bMax: 20000, bStep: 100, cMin: 0.2, cMax: 10, cStep: 0.1, d: 150, dMin: 20, dMax: 3000, dStep: 10 },
+      AUD: { b: 3000, bMin: 300, bMax: 30000, bStep: 100, cMin: 0.3, cMax: 15, cStep: 0.1, d: 250, dMin: 30, dMax: 5000, dStep: 25 },
+      BDT: { b: 50000, bMin: 5000, bMax: 500000, bStep: 5000, cMin: 5, cMax: 250, cStep: 5, d: 2500, dMin: 300, dMax: 50000, dStep: 100 }
+    };
+
+    function setBudgetCurrency(code) {
+      bpCurr = code;
+      const def = BP_DEFS[code];
+      document.querySelectorAll('.bcurr-btn').forEach(b => {
+        const on = b.getAttribute('data-bcurr') === code;
+        b.className = on
+          ? 'bcurr-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-[#2563EB] text-white'
+          : 'bcurr-btn px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-500 dark:text-slate-300';
+      });
+      document.querySelectorAll('.bp-sym').forEach(el => el.textContent = CURR[code].sym);
+
+      const br = document.getElementById('bp-budget-range');
+      br.min = def.bMin; br.max = def.bMax; br.step = def.bStep; br.value = def.b;
+      document.getElementById('bp-budget-num').value = def.b;
+
+      const dr = document.getElementById('bp-deal-range');
+      dr.min = def.dMin; dr.max = def.dMax; dr.step = def.dStep; dr.value = def.d;
+      document.getElementById('bp-deal-num').value = def.d;
+
+      const cr = document.getElementById('bp-cpc-range');
+      cr.min = def.cMin; cr.max = def.cMax; cr.step = def.cStep;
+
+      setBudgetPlatform(bpPlat);
+    }
+
+    function setBudgetPlatform(plat) {
+      bpPlat = plat;
+      const info = BP_PLATS[plat];
+      document.querySelectorAll('.plat-btn').forEach(b => {
+        const on = b.getAttribute('data-plat') === plat;
+        b.className = on
+          ? 'plat-btn py-2.5 rounded-xl text-xs font-bold border transition bg-[#2563EB] border-[#2563EB] text-white'
+          : 'plat-btn py-2.5 rounded-xl text-xs font-bold border transition bg-slate-50 dark:bg-[#0B1120] border-slate-200 dark:border-[#1E293B] text-slate-600 dark:text-slate-300';
+      });
+      const cpc = bpCurr === 'BDT' ? Math.round((info.cpcUSD * 15) / 5) * 5 : Number((info.cpcUSD * CURR[bpCurr].rate).toFixed(1));
+      document.getElementById('bp-cpc-num').value = cpc;
+      document.getElementById('bp-cpc-range').value = cpc;
+      document.getElementById('bp-cvr-num').value = info.cvr;
+      document.getElementById('bp-cvr-range').value = info.cvr;
+      document.getElementById('bp-plat-label').textContent = info.label;
+      calcBudget();
+    }
+
+    function syncBudget(field, src) {
+      const n = document.getElementById(`bp-${field}-num`);
+      const r = document.getElementById(`bp-${field}-range`);
+      if (src === 'range') n.value = r.value;
+      else r.value = n.value;
+      calcBudget();
+    }
+
+    function calcBudget() {
+      const b = Math.max(1, parseFloat(document.getElementById('bp-budget-num').value) || 0);
+      const cpc = Math.max(0.05, parseFloat(document.getElementById('bp-cpc-num').value) || 0.5);
+      const cvr = Math.max(0.1, parseFloat(document.getElementById('bp-cvr-num').value) || 1) / 100;
+      const deal = Math.max(1, parseFloat(document.getElementById('bp-deal-num').value) || 10);
+
+      const clicks = Math.round(b / cpc);
+      const leads = Math.max(1, Math.round(clicks * cvr));
+      const rev = leads * deal;
+      const roas = (rev / b).toFixed(1);
+
+      document.getElementById('bp-clicks').textContent = clicks.toLocaleString('en-US');
+      document.getElementById('bp-leads').textContent = leads.toLocaleString('en-US');
+      document.getElementById('bp-rev').textContent = fmtMoney(rev, bpCurr, 0);
+      document.getElementById('bp-roas').textContent = roas + 'x';
+      document.getElementById('bp-s70').textContent = fmtMoney(b * 0.7, bpCurr, 0);
+      document.getElementById('bp-s20').textContent = fmtMoney(b * 0.2, bpCurr, 0);
+      document.getElementById('bp-s10').textContent = fmtMoney(b * 0.1, bpCurr, 0);
+    }
+
+    function sendBudgetWhatsApp() {
+      const txt = `Hi DM IT Expert! I planned my ${BP_PLATS[bpPlat].label} budget (${fmtMoney(document.getElementById('bp-budget-num').value, bpCurr, 0)}/mo, est. ${document.getElementById('bp-leads').textContent} leads, ${document.getElementById('bp-roas').textContent} ROAS). Can we do a free campaign audit?`;
+      window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(txt)}`, '_blank', 'noopener,noreferrer');
+    }
+
+    // =========================================================================
+    // TOOL 2: UTM LINK BUILDER
+    // =========================================================================
+    let builtUtmUrl = '';
+    function setUtmChip(id, val) {
+      document.getElementById(id).value = val;
+      buildUtm();
+    }
+    function buildUtm() {
+      let base = document.getElementById('utm-url').value.trim();
+      const out = document.getElementById('utm-output');
+      if (!base) {
+        builtUtmUrl = '';
+        out.innerHTML = `<span class="text-slate-500 italic">Enter a Website URL to generate your UTM link...</span>`;
+        return;
+      }
+      if (!/^https?:\/\//i.test(base)) base = 'https://' + base;
+      const clean = v => v.trim().toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_\-]/g, '');
+      const pairs = [
+        ['utm_source', clean(document.getElementById('utm-source').value)],
+        ['utm_medium', clean(document.getElementById('utm-medium').value)],
+        ['utm_campaign', clean(document.getElementById('utm-campaign').value)]
+      ].filter(([, v]) => v);
+
+      const join = base.includes('?') ? '&' : '?';
+      builtUtmUrl = pairs.length ? `${base}${join}${pairs.map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}` : base;
+
+      const safeBase = base.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const colored = pairs.map(([k, v], i) => `<span class="text-slate-500">${i === 0 ? join : '&'}</span><span class="text-sky-400">${k}=</span><span class="text-[#FF5A1F] font-semibold">${encodeURIComponent(v)}</span>`).join('');
+      out.innerHTML = `<span class="text-white font-semibold">${safeBase}</span>${colored}`;
+    }
+    function copyUtm() {
+      if (!builtUtmUrl) return showToast('Enter a Website URL first.');
+      const ta = document.createElement('textarea');
+      ta.value = builtUtmUrl;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast('Tracking URL copied to clipboard!'); }
+      catch (e) { showToast('Ready to copy manually.'); }
+      document.body.removeChild(ta);
+    }
+
+    // =========================================================================
+    // TOOL 3: LEAD CONVERSION CALCULATOR
+    // =========================================================================
+    let lcCurr = 'USD';
+    const LC_DEFS = {
+      USD: { s: 2500, sMin: 200, sMax: 25000, sStep: 100, d: 800, dMin: 50, dMax: 5000, dStep: 50 },
+      AUD: { s: 3500, sMin: 300, sMax: 35000, sStep: 100, d: 1200, dMin: 100, dMax: 8000, dStep: 50 },
+      BDT: { s: 60000, sMin: 5000, sMax: 500000, sStep: 5000, d: 15000, dMin: 1000, dMax: 150000, dStep: 500 }
+    };
+    function setLeadCurrency(code) {
+      lcCurr = code;
+      const def = LC_DEFS[code];
+      document.querySelectorAll('.lcurr-btn').forEach(b => {
+        const on = b.getAttribute('data-lcurr') === code;
+        b.className = on
+          ? 'lcurr-btn px-2.5 py-1 rounded-lg text-xs font-bold transition bg-[#2563EB] text-white'
+          : 'lcurr-btn px-2.5 py-1 rounded-lg text-xs font-bold transition text-slate-500 dark:text-slate-300';
+      });
+      const s = document.getElementById('lc-spend');
+      s.min = def.sMin; s.max = def.sMax; s.step = def.sStep; s.value = def.s;
+      const d = document.getElementById('lc-deal');
+      d.min = def.dMin; d.max = def.dMax; d.step = def.dStep; d.value = def.d;
+      calcLead();
+    }
+    function calcLead() {
+      const spend = parseFloat(document.getElementById('lc-spend').value);
+      const leads = parseFloat(document.getElementById('lc-leads').value);
+      const qual = parseFloat(document.getElementById('lc-qual').value);
+      const close = parseFloat(document.getElementById('lc-close').value);
+      const deal = parseFloat(document.getElementById('lc-deal').value);
+
+      document.getElementById('lc-spend-val').textContent = fmtMoney(spend, lcCurr, 0);
+      document.getElementById('lc-leads-val').textContent = leads;
+      document.getElementById('lc-qual-val').textContent = qual + '%';
+      document.getElementById('lc-close-val').textContent = close + '%';
+      document.getElementById('lc-deal-val').textContent = fmtMoney(deal, lcCurr, 0);
+
+      const qualLeads = Math.round(leads * (qual / 100));
+      const closed = Math.max(0, Math.round(qualLeads * (close / 100)));
+      const cpl = spend / leads;
+      const cpa = closed > 0 ? spend / closed : 0;
+      const rev = closed * deal;
+
+      document.getElementById('lc-cpl').textContent = fmtMoney(cpl, lcCurr, lcCurr === 'BDT' ? 0 : 2);
+      document.getElementById('lc-cpa').textContent = closed > 0 ? fmtMoney(cpa, lcCurr, lcCurr === 'BDT' ? 0 : 2) : '—';
+      document.getElementById('lc-rev').textContent = fmtMoney(rev, lcCurr, 0);
+
+      const boostClose = Math.min(100, close + 5);
+      const boostClosed = Math.round(qualLeads * (boostClose / 100));
+      const extraRev = Math.max(0, boostClosed - closed) * deal;
+      document.getElementById('lc-insight').innerHTML =
+        `Improving your Close Rate by just <strong class="text-[#FF5A1F]">+5%</strong> (to ${boostClose}%) with instant WhatsApp/CRM follow-up adds <strong class="text-emerald-400">+${fmtMoney(extraRev, lcCurr, 0)}/month</strong> in extra revenue with ${CURR[lcCurr].sym}0 extra ad spend.`;
+    }
+    function sendLeadWhatsApp() {
+      const txt = `Hi DM IT Expert! I modeled my funnel (${document.getElementById('lc-leads').value} leads/mo, est. revenue ${document.getElementById('lc-rev').textContent}). I'd like help improving my lead conversion rate!`;
+      window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(txt)}`, '_blank', 'noopener,noreferrer');
+    }
+
+    // Initialize Everything
+    initTheme();
+    setBudgetCurrency('USD');
+    buildUtm();
+    setLeadCurrency('USD');
+    lucide.createIcons();
+  </script>
+</body>
+</html>

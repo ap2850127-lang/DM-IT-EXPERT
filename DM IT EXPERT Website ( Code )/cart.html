@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart | DM IT Expert — Paid Tool Checkout</title>
+  <meta name="description" content="Review your DM IT Expert Paid Tools cart, apply coupon codes, and complete your order securely via bKash Send Money or WhatsApp." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (700, 800) & Inter (400, 500, 600) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#0B1120',
+              900: '#111827',
+              800: '#1E293B',
+            },
+            offwhite: '#F8FAFC',
+            brandblue: '#2563EB',
+            signal: '#FF5A1F',
+            bkash: '#E2136E',
+            whatsapp: '#25D366',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Subtle scrollbar for modals and lists */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+
+    /* Hide number input spinners for clean quantity boxes */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    /* Clean Print Receipt Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #receipt-print-area,
+      #receipt-print-area * {
+        visibility: visible;
+      }
+      #receipt-print-area {
+        position: fixed;
+        inset: 0;
+        background: #ffffff;
+        padding: 24px;
+        box-shadow: none !important;
+        border: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0B1120] font-sans antialiased selection:bg-[#2563EB] selection:text-white flex flex-col min-h-screen">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY DEEP NAVY HEADER (#0B1120)                                  -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-[#0B1120]/95 backdrop-blur-md border-b border-[#1E293B]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+
+      <!-- Left: Custom Flat SVG Logo "The Upward Pivot" -->
+      <a href="index.html" class="flex items-center shrink-0 focus:outline-none" aria-label="DM IT Expert Home">
+        <svg width="192" height="40" viewBox="0 0 245 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 sm:h-10 w-auto">
+          <text x="0" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+          <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+          <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+          <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#FF5A1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="98" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+          <text x="1" y="47" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+        </svg>
+      </a>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Home</a>
+        <a href="services.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Services</a>
+        <a href="shop.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Paid Tool</a>
+        <a href="cart.html" aria-current="page" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-white bg-[#111827] border border-[#2563EB]/50 inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]"></span>
+          <span>Cart</span>
+        </a>
+      </nav>
+
+      <!-- Right: Live Cart Badge + Signal Orange CTA + Mobile Hamburger -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a href="#cart-items-section" aria-label="Cart summary" class="relative px-3 py-2.5 rounded-xl bg-[#111827] hover:bg-[#1E293B] border border-[#1E293B] text-white transition inline-flex items-center gap-2">
+          <div class="relative">
+            <i data-lucide="shopping-cart" class="w-5 h-5 text-[#2563EB]"></i>
+            <span id="header-cart-badge" class="absolute -top-2 -right-2.5 min-w-[19px] h-[19px] px-1 rounded-full bg-[#FF5A1F] text-white text-[11px] font-bold flex items-center justify-center shadow">0</span>
+          </div>
+          <span id="header-cart-total" class="hidden sm:inline text-xs sm:text-sm font-display font-bold text-slate-100 pl-1.5 border-l border-[#1E293B]">0.00৳</span>
+        </a>
+
+        <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 bg-[#FF5A1F] hover:bg-[#e54b14] text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition shadow-lg shadow-[#FF5A1F]/20">
+          <span>Let's Talk</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-xl bg-[#111827] border border-[#1E293B] text-slate-200 hover:text-white transition">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Responsive Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#111827] border-b border-[#1E293B] px-4 pt-3 pb-5">
+      <div class="flex flex-col space-y-1.5">
+        <a href="index.html" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Home</a>
+        <a href="services.html" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Services</a>
+        <a href="shop.html" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Paid Tool</a>
+        <a href="cart.html" class="px-4 py-3 rounded-xl text-sm font-semibold text-white bg-[#0B1120] border border-[#2563EB]/50 flex items-center justify-between">
+          <span>Cart</span>
+          <span class="w-2 h-2 rounded-full bg-[#FF5A1F]"></span>
+        </a>
+        <a href="https://wa.me/61480820298" target="_blank" rel="noopener noreferrer" class="mt-2 px-4 py-3 rounded-xl text-sm font-semibold bg-[#FF5A1F] text-white text-center">Let's Talk →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. TOP PROGRESS STEPPER BANNER                                        -->
+  <!-- ===================================================================== -->
+  <section class="bg-[#0B1120] border-b border-[#1E293B] py-5 sm:py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">Shopping Cart &amp; Checkout</h1>
+          <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Review your selected Paid Tools and confirm securely with bKash Send Money.</p>
+        </div>
+
+        <!-- 3-Step Visual Stepper -->
+        <ol class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm overflow-x-auto pb-1 sm:pb-0" aria-label="Checkout Progress">
+          <li id="step-1" class="flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-[#2563EB] text-white font-semibold transition">
+            <span class="w-5 h-5 rounded-full bg-white text-[#2563EB] font-display font-extrabold text-[11px] flex items-center justify-center">1</span>
+            <span>Shopping Cart</span>
+          </li>
+          <li class="text-slate-600 shrink-0" aria-hidden="true"><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+          <li id="step-2" class="flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-[#111827] border border-[#1E293B] text-slate-300 font-medium transition">
+            <span class="w-5 h-5 rounded-full bg-[#1E293B] text-slate-300 font-display font-bold text-[11px] flex items-center justify-center">2</span>
+            <span>bKash Payment &amp; Info</span>
+          </li>
+          <li class="text-slate-600 shrink-0" aria-hidden="true"><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+          <li id="step-3" class="flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-[#111827] border border-[#1E293B] text-slate-300 font-medium transition">
+            <span class="w-5 h-5 rounded-full bg-[#1E293B] text-slate-300 font-display font-bold text-[11px] flex items-center justify-center">3</span>
+            <span>Order Confirmed</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. TWO-COLUMN RESPONSIVE CART & DIRECT CHECKOUT LAYOUT                -->
+  <!-- ===================================================================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+
+      <!-- ================================================================= -->
+      <!-- LEFT COLUMN (~60% / 7 cols): CART ITEMS + COUPON + QUICK ADD      -->
+      <!-- ================================================================= -->
+      <div id="cart-items-section" class="lg:col-span-7 space-y-6">
+
+        <!-- Cart Items Card -->
+        <div class="bg-white border border-slate-200/90 rounded-2xl shadow-sm overflow-hidden">
+          <div class="px-5 sm:px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="shopping-bag" class="w-5 h-5 text-[#2563EB]"></i>
+              <h2 class="font-display font-extrabold text-lg text-[#0B1120]">Your Cart Items</h2>
+              <span id="cart-items-count-pill" class="px-2.5 py-0.5 rounded-full bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold">0 Items</span>
+            </div>
+            <button id="clear-cart-btn" type="button" onclick="clearCart()" class="text-xs font-semibold text-slate-500 hover:text-red-600 transition inline-flex items-center gap-1">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              <span>Clear Cart</span>
+            </button>
+          </div>
+
+          <!-- Populated Cart Items List -->
+          <div id="cart-list-container" class="divide-y divide-slate-100">
+            <!-- Dynamically rendered -->
+          </div>
+
+          <!-- Empty Cart State -->
+          <div id="empty-cart-state" class="hidden py-14 px-6 text-center">
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="shopping-cart" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-display font-extrabold text-xl text-[#0B1120]">Your cart is currently empty</h3>
+            <p class="text-sm text-slate-500 mt-1.5 max-w-sm mx-auto">
+              Add any verified Paid Tool below or browse our full catalog to get started with instant delivery.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <a href="shop.html" class="px-6 py-3 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-semibold transition shadow-sm">
+                Browse Paid Tools
+              </a>
+              <button type="button" onclick="addProductToCart('canva-pro')" class="px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-slate-100 border border-slate-200 text-[#0B1120] text-sm font-semibold transition">
+                + Add Canva Pro (50৳)
+              </button>
+              <button type="button" onclick="addProductToCart('capcut-pro-premium')" class="px-4 py-3 rounded-xl bg-[#F8FAFC] hover:bg-slate-100 border border-slate-200 text-[#0B1120] text-sm font-semibold transition">
+                + Add CapCut Pro (250৳)
+              </button>
+            </div>
+          </div>
+
+          <!-- Coupon Code Bar & Continue Shopping Footer -->
+          <div class="bg-[#F8FAFC] border-t border-slate-200 px-5 sm:px-6 py-5 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2.5">
+              <div class="relative flex-1">
+                <i data-lucide="tag" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                <input id="coupon-input" type="text" placeholder="Enter coupon code" class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-[#0B1120] uppercase placeholder:normal-case placeholder-slate-400 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+              </div>
+              <button type="button" onclick="applyCoupon()" class="px-5 py-2.5 rounded-xl bg-[#0B1120] hover:bg-[#2563EB] text-white text-sm font-semibold transition shrink-0">
+                Apply Coupon
+              </button>
+            </div>
+
+            <!-- Coupon Feedback & Helper Note -->
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div id="coupon-status" class="text-slate-500">
+                Try code: <button type="button" onclick="quickFillCoupon()" class="font-bold text-[#2563EB] hover:underline">DMIT10</button> for 10% off
+              </div>
+              <a href="shop.html" class="font-semibold text-[#2563EB] hover:text-[#FF5A1F] transition inline-flex items-center gap-1">
+                <span>← Continue Shopping</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- "Add More Paid Tools" Quick-Add Strip -->
+        <div class="bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 shadow-sm">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB]">Quick Add</span>
+              <h3 class="font-display font-extrabold text-lg text-[#0B1120]">Add More Paid Tools</h3>
+            </div>
+            <a href="shop.html" class="text-xs font-semibold text-slate-500 hover:text-[#2563EB] transition">View Shop →</a>
+          </div>
+
+          <div id="quick-add-grid" class="grid sm:grid-cols-2 gap-3">
+            <!-- Dynamically rendered 5 products -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- RIGHT COLUMN (~40% / 5 cols): STICKY SUMMARY & BKASH CHECKOUT     -->
+      <!-- ================================================================= -->
+      <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-5">
+
+        <div class="bg-white border border-slate-200/90 rounded-2xl shadow-sm overflow-hidden">
+          <!-- Order Summary Header -->
+          <div class="bg-[#0B1120] text-white px-6 py-4 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-lg">Order Summary &amp; Checkout</h2>
+            <span class="px-2.5 py-0.5 rounded-full bg-[#2563EB]/25 text-sky-300 text-[11px] font-bold">Instant Delivery</span>
+          </div>
+
+          <!-- Totals Breakdown -->
+          <div class="px-6 py-5 border-b border-slate-200 space-y-2.5 text-sm">
+            <div class="flex items-center justify-between text-slate-600">
+              <span>Subtotal</span>
+              <span id="sum-subtotal" class="font-semibold text-[#0B1120]">0.00৳</span>
+            </div>
+            <div class="flex items-center justify-between text-emerald-700">
+              <span>You Save (Sale Discount)</span>
+              <span id="sum-savings" class="font-semibold">-0.00৳</span>
+            </div>
+            <div id="sum-coupon-row" class="hidden items-center justify-between text-[#2563EB]">
+              <span class="flex items-center gap-1.5">
+                <span>Coupon (<strong id="sum-coupon-code">DMIT10</strong>)</span>
+                <button type="button" onclick="removeCoupon()" aria-label="Remove coupon" class="text-[11px] text-red-500 hover:underline">(Remove)</button>
+              </span>
+              <span id="sum-coupon-amount" class="font-semibold">-0.00৳</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-600">
+              <span>Delivery</span>
+              <span class="font-semibold text-emerald-600">Instant Digital - Free</span>
+            </div>
+            <div class="pt-3 mt-2 border-t border-slate-200 flex items-center justify-between">
+              <span class="font-display font-extrabold text-base text-[#0B1120]">Grand Total</span>
+              <span id="sum-grand-total" class="font-display font-extrabold text-2xl text-[#0B1120]">0.00৳</span>
+            </div>
+          </div>
+
+          <!-- Direct Checkout Form -->
+          <form id="direct-checkout-form" onsubmit="handleOrderSubmit(event)" novalidate class="p-6 space-y-5">
+
+            <!-- Customer Details -->
+            <div class="space-y-3.5">
+              <h3 class="font-display font-bold text-sm uppercase tracking-wider text-slate-500">Customer Details</h3>
+
+              <div>
+                <label for="cust-name" class="block text-xs font-bold text-slate-700 mb-1">Full Name <span class="text-[#FF5A1F]">*</span></label>
+                <input id="cust-name" type="text" required onfocus="setStepperState(2)" placeholder="Your full name" class="w-full px-3.5 py-2.5 rounded-xl bg-[#F8FAFC] border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div>
+                  <label for="cust-phone" class="block text-xs font-bold text-slate-700 mb-1">Phone Number <span class="text-[#FF5A1F]">*</span></label>
+                  <input id="cust-phone" type="tel" required onfocus="setStepperState(2)" placeholder="01XXXXXXXXX" class="w-full px-3.5 py-2.5 rounded-xl bg-[#F8FAFC] border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+                </div>
+                <div>
+                  <label for="cust-email" class="block text-xs font-bold text-slate-700 mb-1">Email (Delivery) <span class="text-[#FF5A1F]">*</span></label>
+                  <input id="cust-email" type="email" required onfocus="setStepperState(2)" placeholder="you@gmail.com" class="w-full px-3.5 py-2.5 rounded-xl bg-[#F8FAFC] border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+                </div>
+              </div>
+            </div>
+
+            <!-- bKash Send Money Payment Box (Pre-selected) -->
+            <div class="bg-[#E2136E]/[0.04] border-2 border-[#E2136E] rounded-2xl p-4 sm:p-5 space-y-3.5">
+              <div class="flex items-center justify-between gap-2 pb-2.5 border-b border-[#E2136E]/20">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="payment_method" value="bKash Send Money" checked class="w-4 h-4 accent-[#E2136E]" />
+                  <span class="font-display font-extrabold text-sm sm:text-base text-[#0B1120]">bKash Send Money</span>
+                </label>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#E2136E] text-white text-[10px] font-bold uppercase tracking-wider">Personal</span>
+              </div>
+
+              <div class="bg-white border border-[#E2136E]/20 rounded-xl p-3.5 space-y-2.5">
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Send Money <strong id="bkash-payable-inline" class="text-[#E2136E]">0.00৳</strong> to our Personal bKash Number:
+                </p>
+                <div class="flex items-center justify-between gap-2 bg-[#F8FAFC] border border-slate-200 rounded-xl px-3.5 py-2">
+                  <span class="font-display font-extrabold text-lg tracking-wider text-[#0B1120]">01710714858</span>
+                  <button type="button" onclick="copyBkashNumber()" class="px-3 py-1.5 rounded-lg bg-[#E2136E] hover:bg-[#c5105f] text-white text-xs font-bold transition inline-flex items-center gap-1.5">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span id="copy-btn-label">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div>
+                  <label for="bkash-sender" class="block text-[11px] font-bold text-slate-700 mb-1">Your bKash Number <span class="text-[#E2136E]">*</span></label>
+                  <input id="bkash-sender" type="tel" required onfocus="setStepperState(2)" placeholder="017XXXXXXXX" class="w-full px-3 py-2.5 rounded-xl bg-white border border-[#E2136E]/40 text-sm text-[#0B1120] placeholder-slate-400 focus:outline-none focus:border-[#E2136E] focus:ring-2 focus:ring-[#E2136E]/15 transition" />
+                </div>
+                <div>
+                  <label for="bkash-trxid" class="block text-[11px] font-bold text-slate-700 mb-1">bKash TrxID <span class="text-[#E2136E]">*</span></label>
+                  <input id="bkash-trxid" type="text" required onfocus="setStepperState(2)" placeholder="e.g. 9K7A2B4C1D" class="w-full px-3 py-2.5 rounded-xl bg-white border border-[#E2136E]/40 text-sm text-[#0B1120] uppercase placeholder:normal-case placeholder-slate-400 focus:outline-none focus:border-[#E2136E] focus:ring-2 focus:ring-[#E2136E]/15 transition" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Inline Validation Error Box (No alert()) -->
+            <div id="checkout-error-box" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium flex items-start gap-2">
+              <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+              <span id="checkout-error-text"></span>
+            </div>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="space-y-2.5 pt-1">
+              <button type="submit" id="confirm-order-btn" class="w-full py-3.5 px-5 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm sm:text-base transition shadow-lg shadow-[#FF5A1F]/25 flex items-center justify-center gap-2">
+                <span id="confirm-order-label">Confirm Order (0.00৳) →</span>
+              </button>
+
+              <button type="button" onclick="openWhatsAppCartInquiry()" class="w-full py-3 px-5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-display font-bold text-sm transition shadow-md shadow-[#25D366]/20 flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Order / Ask on WhatsApp</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 4. ORDER CONFIRMATION MODAL                                           -->
+  <!-- ===================================================================== -->
+  <div id="order-confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-receipt-heading">
+    <!-- Backdrop -->
+    <div onclick="closeConfirmationModal()" class="absolute inset-0 bg-[#0B1120]/80 backdrop-blur-sm no-print"></div>
+
+    <!-- Modal Panel -->
+    <div id="receipt-print-area" class="relative z-10 w-full max-w-lg bg-white text-[#0B1120] rounded-3xl border border-slate-200 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+      <!-- Top Success Banner -->
+      <div class="bg-[#0B1120] text-white px-6 py-6 text-center relative">
+        <button type="button" onclick="closeConfirmationModal()" aria-label="Close modal" class="no-print absolute top-4 right-4 p-2 rounded-xl bg-[#111827] hover:bg-[#1E293B] text-slate-300 hover:text-white transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
+          <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+        </div>
+        <h2 id="modal-receipt-heading" class="font-display font-extrabold text-2xl">Order Confirmed!</h2>
+        <p class="text-xs text-slate-300 mt-1">
+          Order ID: <strong id="modal-order-id" class="text-[#FF5A1F] font-display tracking-wide">DM-2026-0000</strong>
+        </p>
+      </div>
+
+      <!-- Receipt Body -->
+      <div class="p-6 overflow-y-auto custom-scroll space-y-4">
+        <div class="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-4 space-y-2 text-sm">
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-500">Customer Name</span>
+            <span id="rec-name" class="font-semibold text-[#0B1120] text-right"></span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-500">Phone</span>
+            <span id="rec-phone" class="font-semibold text-[#0B1120] text-right"></span>
+          </div>
+          <div class="flex justify-between gap-2">
+            <span class="text-slate-500">Delivery Email</span>
+            <span id="rec-email" class="font-semibold text-[#0B1120] text-right break-all"></span>
+          </div>
+
+          <div class="pt-2.5 mt-2 border-t border-slate-200">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Ordered Items</p>
+            <ul id="rec-items-list" class="space-y-1 text-xs sm:text-sm text-slate-700"></ul>
+          </div>
+
+          <div id="rec-coupon-line" class="hidden justify-between gap-2 text-xs text-[#2563EB] pt-1">
+            <span>Coupon Applied (DMIT10)</span>
+            <span id="rec-coupon-val" class="font-semibold"></span>
+          </div>
+
+          <div class="pt-2.5 mt-2 border-t border-slate-200 space-y-1.5">
+            <div class="flex justify-between gap-2 text-xs sm:text-sm">
+              <span class="text-slate-500">Payment Method</span>
+              <span class="font-semibold text-[#E2136E]">bKash Send Money</span>
+            </div>
+            <div class="flex justify-between gap-2 text-xs sm:text-sm">
+              <span class="text-slate-500">Sender bKash No</span>
+              <span id="rec-bkash-sender" class="font-semibold text-[#0B1120]"></span>
+            </div>
+            <div class="flex justify-between gap-2 text-xs sm:text-sm">
+              <span class="text-slate-500">bKash TrxID</span>
+              <span id="rec-bkash-trxid" class="font-display font-bold text-[#E2136E] uppercase"></span>
+            </div>
+            <div class="flex justify-between gap-2 pt-2 border-t border-slate-200">
+              <span class="font-display font-bold text-[#0B1120]">Total Paid</span>
+              <span id="rec-total-paid" class="font-display font-extrabold text-lg text-[#FF5A1F]"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Action Buttons -->
+        <div class="space-y-2.5 no-print">
+          <a id="rec-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-display font-bold text-sm sm:text-base transition shadow-lg shadow-[#25D366]/25 flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Send Order Details on WhatsApp →</span>
+          </a>
+
+          <div class="grid grid-cols-2 gap-2.5">
+            <button type="button" onclick="window.print()" class="py-2.5 px-4 rounded-xl bg-[#F8FAFC] hover:bg-slate-100 border border-slate-200 text-[#0B1120] text-xs sm:text-sm font-semibold transition inline-flex items-center justify-center gap-1.5">
+              <i data-lucide="printer" class="w-4 h-4 text-[#2563EB]"></i>
+              <span>Print / Save Receipt</span>
+            </button>
+            <button type="button" onclick="closeConfirmationModal()" class="py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold transition">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 5. DEEP NAVY FOOTER (#0B1120)                                         -->
+  <!-- ===================================================================== -->
+  <footer class="bg-[#0B1120] border-t border-[#1E293B] text-slate-300 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-12 gap-8 pb-10 border-b border-[#1E293B]">
+
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-3">
+          <a href="index.html" class="inline-block" aria-label="DM IT Expert Home">
+            <svg width="180" height="38" viewBox="0 0 245 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 w-auto">
+              <text x="0" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+              <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+              <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+              <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#FF5A1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+              <text x="98" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+              <text x="1" y="47" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+            </svg>
+          </a>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            Digital growth, made practical. Paid advertising, tracking, websites, and verified Paid Tools for businesses worldwide.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-3.5">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+            <li><a href="shop.html" class="hover:text-white transition">Paid Tool Shop</a></li>
+            <li><a href="cart.html" class="text-white font-medium">Shopping Cart</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div class="md:col-span-4">
+          <h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-3.5">Contact &amp; Payment Support</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li>
+              <a href="https://wa.me/61480820298" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition inline-flex items-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4 text-[#25D366]"></i>
+                <span>WhatsApp: +61 480 820 298</span>
+              </a>
+            </li>
+            <li class="inline-flex items-center gap-2">
+              <i data-lucide="smartphone" class="w-4 h-4 text-[#E2136E]"></i>
+              <span>bKash / BD Contact: 01710714858</span>
+            </li>
+            <li>
+              <a href="mailto:contact@dmitexpert.com" class="hover:text-[#2563EB] transition inline-flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-[#2563EB]"></i>
+                <span>contact@dmitexpert.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <p>© 2026 DM IT Expert. All rights reserved.</p>
+        <p>Australia · Bangladesh · Worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING WHATSAPP CHAT BUTTON                                         -->
+  <!-- ===================================================================== -->
+  <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%20need%20help%20with%20my%20cart." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="no-print fixed bottom-5 right-5 z-40 flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl shadow-emerald-950/30 transition-transform hover:scale-105">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span class="text-sm font-bold hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- ===================================================================== -->
+  <!-- TOAST NOTIFICATION (Replaces alert())                                 -->
+  <!-- ===================================================================== -->
+  <div id="toast" class="no-print fixed bottom-20 right-5 z-50 hidden items-center gap-2.5 bg-[#0B1120] border border-[#2563EB] text-white px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm font-medium max-w-xs sm:max-w-sm">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#FF5A1F] shrink-0"></i>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: LOCALSTORAGE CART, COUPON, BKASH CHECKOUT & RECEIPT       -->
+  <!-- ===================================================================== -->
+  <script>
+    // =========================================================================
+    // 1. PRODUCT CATALOG (5 PAID TOOLS WITH STYLED MINI THUMBNAIL BADGES)
+    // =========================================================================
+    const PRODUCTS = [
+      {
+        id: 'canva-pro',
+        title: 'Canva Pro',
+        regularPrice: 100.00,
+        salePrice: 50.00,
+        badgeBg: 'from-[#00C4CC] via-[#2563EB] to-[#7D2AE8]',
+        badgeShort: 'Canva',
+        badgeSub: 'PRO'
+      },
+      {
+        id: 'canva-pro-1-year',
+        title: 'Canva Pro 1 year',
+        regularPrice: 1200.00,
+        salePrice: 500.00,
+        badgeBg: 'from-[#2563EB] to-[#1D4ED8]',
+        badgeShort: 'Canva',
+        badgeSub: '1 YR'
+      },
+      {
+        id: 'capcut-pro-premium',
+        title: 'CapCut Pro Premium',
+        regularPrice: 400.00,
+        salePrice: 250.00,
+        badgeBg: 'from-[#1e1b4b] via-[#4c1d95] to-[#0B1120]',
+        badgeShort: 'CapCut',
+        badgeSub: 'PRO'
+      },
+      {
+        id: 'claude-premium',
+        title: 'Claude Premium',
+        regularPrice: 1000.00,
+        salePrice: 650.00,
+        badgeBg: 'from-[#FF5A1F] to-[#c2410c]',
+        badgeShort: 'Claude',
+        badgeSub: 'AI PRO'
+      },
+      {
+        id: 'gemini-pro-5tb',
+        title: 'Gemini Pro + 5TB Cloud Storage',
+        regularPrice: 800.00,
+        salePrice: 499.00,
+        badgeBg: 'from-[#0284c7] via-[#2563EB] to-[#0B1120]',
+        badgeShort: 'Gemini',
+        badgeSub: '5TB'
+      }
+    ];
+
+    const STORAGE_KEY = 'dmit_cart';
+    const BKASH_NUMBER = '01710714858';
+    const WHATSAPP_NUMBER = '61480820298';
+
+    let cart = [];
+    let appliedCoupon = null; // { code: 'DMIT10', rate: 0.10 }
+
+    // Format BDT price consistently (e.g., 250.00৳)
+    function formatBDT(amount) {
+      return Number(amount).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }) + '৳';
+    }
+
+    // =========================================================================
+    // 2. LOAD & SAVE CART WITH LOCALSTORAGE ('dmit_cart')
+    // =========================================================================
+    function initCart() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw === null) {
+          // Pre-populate with 2 items on initial visit so page is immediately testable
+          cart = [
+            { id: 'canva-pro', qty: 1 },
+            { id: 'capcut-pro-premium', qty: 1 }
+          ];
+          saveCart();
+        } else {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            cart = parsed.filter(entry =>
+              entry && typeof entry.qty === 'number' && entry.qty > 0 &&
+              PRODUCTS.some(p => p.id === entry.id)
+            );
+          } else {
+            cart = [];
+          }
+        }
+      } catch (err) {
+        // Fallback if localStorage is blocked
+        cart = [
+          { id: 'canva-pro', qty: 1 },
+          { id: 'capcut-pro-premium', qty: 1 }
+        ];
+      }
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      } catch (err) {
+        // Ignore storage quota / privacy mode errors gracefully
+      }
+    }
+
+    // =========================================================================
+    // 3. CALCULATIONS & RENDERING
+    // =========================================================================
+    function computeTotals() {
+      let totalQty = 0;
+      let subtotal = 0;
+      let regularTotal = 0;
+
+      const detailed = cart.map(entry => {
+        const product = PRODUCTS.find(p => p.id === entry.id);
+        const lineTotal = product.salePrice * entry.qty;
+        const lineRegular = product.regularPrice * entry.qty;
+        totalQty += entry.qty;
+        subtotal += lineTotal;
+        regularTotal += lineRegular;
+        return { ...product, qty: entry.qty, lineTotal, lineRegular };
+      });
+
+      const saleSavings = Math.max(0, regularTotal - subtotal);
+      const couponDiscount = appliedCoupon ? subtotal * appliedCoupon.rate : 0;
+      const grandTotal = Math.max(0, subtotal - couponDiscount);
+
+      return { detailed, totalQty, subtotal, saleSavings, couponDiscount, grandTotal };
+    }
+
+    function renderAll() {
+      const totals = computeTotals();
+      renderCartItems(totals);
+      renderSummary(totals);
+      renderQuickAdd();
+      lucide.createIcons();
+    }
+
+    function renderCartItems({ detailed, totalQty }) {
+      const container = document.getElementById('cart-list-container');
+      const emptyState = document.getElementById('empty-cart-state');
+      const clearBtn = document.getElementById('clear-cart-btn');
+      const pill = document.getElementById('cart-items-count-pill');
+
+      pill.textContent = `${totalQty} ${totalQty === 1 ? 'Item' : 'Items'}`;
+
+      if (detailed.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      clearBtn.classList.remove('hidden');
+
+      container.innerHTML = detailed.map(item => `
+        <div class="p-5 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/70 transition">
+          <!-- Left: Mini Visual Badge + Details -->
+          <div class="flex items-start sm:items-center gap-4 min-w-0">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br ${item.badgeBg} text-white flex flex-col items-center justify-center shrink-0 shadow-md p-1.5 text-center select-none">
+              <span class="font-display font-extrabold text-xs leading-tight tracking-tight">${item.badgeShort}</span>
+              <span class="mt-0.5 px-1.5 py-0.2 rounded bg-white/20 text-[9px] font-bold tracking-wider uppercase">${item.badgeSub}</span>
+            </div>
+
+            <div class="min-w-0">
+              <h3 class="font-display font-bold text-base text-[#0B1120] leading-snug">${item.title}</h3>
+              <span class="inline-flex items-center gap-1 mt-1 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[11px] font-semibold">
+                <i data-lucide="zap" class="w-3 h-3"></i>
+                Instant Digital Delivery
+              </span>
+              <div class="mt-1.5 flex items-baseline gap-2 text-xs sm:text-sm">
+                <span class="text-slate-400 line-through">${formatBDT(item.regularPrice)}</span>
+                <span class="font-display font-bold text-[#2563EB]">${formatBDT(item.salePrice)}</span>
+                <span class="text-slate-400 text-xs">/ unit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Quantity Control + Line Total + Remove -->
+          <div class="flex items-center justify-between sm:justify-end gap-4 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 shrink-0">
+            <!-- Quantity Stepper -->
+            <div class="inline-flex items-center rounded-xl border border-slate-200 bg-white overflow-hidden">
+              <button type="button" onclick="changeQty('${item.id}', -1)" aria-label="Decrease quantity" class="w-8 h-9 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#0B1120] font-bold transition">−</button>
+              <input type="number" min="1" max="99" value="${item.qty}" onchange="setExactQty('${item.id}', this.value)" aria-label="Quantity for ${item.title}" class="w-10 h-9 text-center text-xs sm:text-sm font-bold text-[#0B1120] border-x border-slate-200 focus:outline-none" />
+              <button type="button" onclick="changeQty('${item.id}', 1)" aria-label="Increase quantity" class="w-8 h-9 flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-[#0B1120] font-bold transition">+</button>
+            </div>
+
+            <!-- Line Total -->
+            <div class="text-right min-w-[78px]">
+              <p class="font-display font-extrabold text-base text-[#0B1120]">${formatBDT(item.lineTotal)}</p>
+            </div>
+
+            <!-- Remove Button -->
+            <button type="button" onclick="removeItem('${item.id}')" aria-label="Remove ${item.title}" class="p-2 rounded-xl bg-red-50 hover:bg-red-100 text-red-500 transition">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderSummary({ totalQty, subtotal, saleSavings, couponDiscount, grandTotal }) {
+      document.getElementById('header-cart-badge').textContent = totalQty;
+      document.getElementById('header-cart-total').textContent = formatBDT(grandTotal);
+
+      document.getElementById('sum-subtotal').textContent = formatBDT(subtotal);
+      document.getElementById('sum-savings').textContent = `-${formatBDT(saleSavings)}`;
+      document.getElementById('sum-grand-total').textContent = formatBDT(grandTotal);
+      document.getElementById('bkash-payable-inline').textContent = formatBDT(grandTotal);
+      document.getElementById('confirm-order-label').textContent = `Confirm Order (${formatBDT(grandTotal)}) →`;
+
+      const couponRow = document.getElementById('sum-coupon-row');
+      if (appliedCoupon && subtotal > 0) {
+        couponRow.classList.remove('hidden');
+        couponRow.classList.add('flex');
+        document.getElementById('sum-coupon-code').textContent = appliedCoupon.code;
+        document.getElementById('sum-coupon-amount').textContent = `-${formatBDT(couponDiscount)}`;
+      } else {
+        couponRow.classList.add('hidden');
+        couponRow.classList.remove('flex');
+      }
+    }
+
+    function renderQuickAdd() {
+      const grid = document.getElementById('quick-add-grid');
+      grid.innerHTML = PRODUCTS.map(product => {
+        const inCart = cart.find(c => c.id === product.id);
+        return `
+          <div class="p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#2563EB]/60 transition flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br ${product.badgeBg} text-white flex flex-col items-center justify-center shrink-0 text-[10px] font-display font-extrabold leading-tight">
+                <span>${product.badgeShort}</span>
+              </div>
+              <div class="min-w-0">
+                <p class="font-display font-bold text-xs sm:text-sm text-[#0B1120] truncate">${product.title}</p>
+                <div class="flex items-baseline gap-1.5 text-xs mt-0.5">
+                  <span class="text-slate-400 line-through">${formatBDT(product.regularPrice)}</span>
+                  <span class="font-bold text-[#2563EB]">${formatBDT(product.salePrice)}</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" onclick="addProductToCart('${product.id}')" class="shrink-0 px-3 py-2 rounded-xl ${inCart ? 'bg-[#0B1120] hover:bg-[#2563EB]' : 'bg-[#2563EB] hover:bg-blue-700'} text-white text-xs font-semibold transition">
+              ${inCart ? `+ Add (${inCart.qty})` : '+ Add to Cart'}
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // 4. CART MUTATIONS & COUPON HANDLERS
+    // =========================================================================
+    function addProductToCart(productId) {
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: productId, qty: 1 });
+      }
+      saveCart();
+      renderAll();
+      setStepperState(1);
+      const prod = PRODUCTS.find(p => p.id === productId);
+      showToast(`Added "${prod.title}" to cart`);
+    }
+
+    function changeQty(productId, delta) {
+      const item = cart.find(c => c.id === productId);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(c => c.id !== productId);
+      }
+      saveCart();
+      renderAll();
+    }
+
+    function setExactQty(productId, rawVal) {
+      const parsed = parseInt(rawVal, 10);
+      if (isNaN(parsed) || parsed < 1) {
+        removeItem(productId);
+        return;
+      }
+      const item = cart.find(c => c.id === productId);
+      if (item) {
+        item.qty = Math.min(99, parsed);
+        saveCart();
+        renderAll();
+      }
+    }
+
+    function removeItem(productId) {
+      cart = cart.filter(c => c.id !== productId);
+      saveCart();
+      renderAll();
+      showToast('Item removed from cart');
+    }
+
+    function clearCart() {
+      cart = [];
+      appliedCoupon = null;
+      document.getElementById('coupon-input').value = '';
+      resetCouponStatusText();
+      saveCart();
+      renderAll();
+      showToast('Cart cleared');
+    }
+
+    function quickFillCoupon() {
+      document.getElementById('coupon-input').value = 'DMIT10';
+      applyCoupon();
+    }
+
+    function applyCoupon() {
+      const input = document.getElementById('coupon-input');
+      const code = input.value.trim().toUpperCase();
+      const statusEl = document.getElementById('coupon-status');
+
+      if (!code) {
+        statusEl.innerHTML = `<span class="text-red-600 font-semibold">Please enter a coupon code (Try DMIT10).</span>`;
+        return;
+      }
+
+      if (code === 'DMIT10') {
+        appliedCoupon = { code: 'DMIT10', rate: 0.10 };
+        statusEl.innerHTML = `<span class="text-emerald-600 font-semibold">Coupon DMIT10 applied — 10% extra discount!</span>`;
+        renderAll();
+        showToast('Coupon DMIT10 applied (10% off)!');
+      } else {
+        appliedCoupon = null;
+        statusEl.innerHTML = `<span class="text-red-600 font-semibold">Invalid coupon "${code}". Try code: <button type="button" onclick="quickFillCoupon()" class="underline font-bold">DMIT10</button></span>`;
+        renderAll();
+      }
+    }
+
+    function removeCoupon() {
+      appliedCoupon = null;
+      document.getElementById('coupon-input').value = '';
+      resetCouponStatusText();
+      renderAll();
+      showToast('Coupon removed');
+    }
+
+    function resetCouponStatusText() {
+      document.getElementById('coupon-status').innerHTML =
+        `Try code: <button type="button" onclick="quickFillCoupon()" class="font-bold text-[#2563EB] hover:underline">DMIT10</button> for 10% off`;
+    }
+
+    // =========================================================================
+    // 5. STEPPER STATE CONTROLLER
+    // =========================================================================
+    function setStepperState(activeStep) {
+      const steps = [1, 2, 3];
+      steps.forEach(num => {
+        const el = document.getElementById(`step-${num}`);
+        const badge = el.querySelector('span:first-child');
+        if (num === activeStep) {
+          el.className = 'flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-[#2563EB] text-white font-semibold transition';
+          badge.className = 'w-5 h-5 rounded-full bg-white text-[#2563EB] font-display font-extrabold text-[11px] flex items-center justify-center';
+        } else if (num < activeStep) {
+          el.className = 'flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-semibold transition';
+          badge.className = 'w-5 h-5 rounded-full bg-emerald-500 text-white font-display font-bold text-[11px] flex items-center justify-center';
+        } else {
+          el.className = 'flex items-center gap-2 shrink-0 px-3 py-1.5 rounded-xl bg-[#111827] border border-[#1E293B] text-slate-300 font-medium transition';
+          badge.className = 'w-5 h-5 rounded-full bg-[#1E293B] text-slate-300 font-display font-bold text-[11px] flex items-center justify-center';
+        }
+      });
+    }
+
+    // =========================================================================
+    // 6. COPY BKASH NUMBER, WHATSAPP INQUIRY & ORDER SUBMISSION
+    // =========================================================================
+    function copyBkashNumber() {
+      const ta = document.createElement('textarea');
+      ta.value = BKASH_NUMBER;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        const label = document.getElementById('copy-btn-label');
+        label.textContent = 'Copied!';
+        showToast(`bKash Number ${BKASH_NUMBER} copied!`);
+        setTimeout(() => { label.textContent = 'Copy'; }, 2200);
+      } catch (err) {
+        showToast(`bKash Number: ${BKASH_NUMBER}`);
+      }
+      document.body.removeChild(ta);
+    }
+
+    function openWhatsAppCartInquiry() {
+      const { detailed, grandTotal } = computeTotals();
+      let msg = `Hi DM IT Expert! I'd like to ask / order from my cart:\n\n`;
+      if (detailed.length > 0) {
+        msg += detailed.map(i => `• ${i.title} (x${i.qty}) — ${formatBDT(i.lineTotal)}`).join('\n');
+        if (appliedCoupon) {
+          msg += `\nCoupon Applied: ${appliedCoupon.code} (10% off)`;
+        }
+        msg += `\n\nEstimated Total: ${formatBDT(grandTotal)}`;
+      } else {
+        msg += `I want to know more about your Paid Tools.`;
+      }
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+    }
+
+    function showCheckoutError(msg) {
+      const box = document.getElementById('checkout-error-box');
+      document.getElementById('checkout-error-text').textContent = msg;
+      box.classList.remove('hidden');
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      document.getElementById('checkout-error-box').classList.add('hidden');
+
+      const { detailed, couponDiscount, grandTotal } = computeTotals();
+      if (detailed.length === 0) {
+        showCheckoutError('Your cart is empty. Please add at least one Paid Tool before confirming your order.');
+        return;
+      }
+
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const email = document.getElementById('cust-email').value.trim();
+      const bkashSender = document.getElementById('bkash-sender').value.trim();
+      const trxId = document.getElementById('bkash-trxid').value.trim().toUpperCase();
+
+      if (!name) {
+        showCheckoutError('Please enter your Full Name.');
+        document.getElementById('cust-name').focus();
+        return;
+      }
+      if (!phone || phone.length < 8) {
+        showCheckoutError('Please enter a valid Phone Number.');
+        document.getElementById('cust-phone').focus();
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        showCheckoutError('Please enter a valid Email Address for instant digital delivery.');
+        document.getElementById('cust-email').focus();
+        return;
+      }
+      if (!bkashSender || bkashSender.length < 10) {
+        showCheckoutError('Please enter Your bKash Number used to send the payment.');
+        document.getElementById('bkash-sender').focus();
+        return;
+      }
+      if (!trxId || trxId.length < 5) {
+        showCheckoutError('Please enter your valid bKash Transaction ID (TrxID).');
+        document.getElementById('bkash-trxid').focus();
+        return;
+      }
+
+      // Generate Unique Order ID
+      const orderId = `DM-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      // Populate Order Confirmation Modal
+      document.getElementById('modal-order-id').textContent = orderId;
+      document.getElementById('rec-name').textContent = name;
+      document.getElementById('rec-phone').textContent = phone;
+      document.getElementById('rec-email').textContent = email;
+      document.getElementById('rec-bkash-sender').textContent = bkashSender;
+      document.getElementById('rec-bkash-trxid').textContent = trxId;
+      document.getElementById('rec-total-paid').textContent = formatBDT(grandTotal);
+
+      document.getElementById('rec-items-list').innerHTML = detailed.map(item => `
+        <li class="flex justify-between gap-2">
+          <span>• ${item.title} (×${item.qty})</span>
+          <strong class="text-[#0B1120] shrink-0">${formatBDT(item.lineTotal)}</strong>
+        </li>
+      `).join('');
+
+      const recCouponLine = document.getElementById('rec-coupon-line');
+      if (appliedCoupon) {
+        recCouponLine.classList.remove('hidden');
+        recCouponLine.classList.add('flex');
+        document.getElementById('rec-coupon-val').textContent = `-${formatBDT(couponDiscount)}`;
+      } else {
+        recCouponLine.classList.add('hidden');
+        recCouponLine.classList.remove('flex');
+      }
+
+      // Build Pre-filled WhatsApp Receipt Message
+      const itemsText = detailed
+        .map(item => `- ${item.title} (x${item.qty}) = ${formatBDT(item.lineTotal)}`)
+        .join('\n');
+
+      const waReceipt =
+        `Hello DM IT Expert! I just confirmed my Paid Tool order:\n\n` +
+        `Order ID: ${orderId}\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Delivery Email: ${email}\n\n` +
+        `Ordered Items:\n${itemsText}\n` +
+        (appliedCoupon ? `Coupon: ${appliedCoupon.code} (-${formatBDT(couponDiscount)})\n` : '') +
+        `\nTotal Paid: ${formatBDT(grandTotal)}\n` +
+        `Payment: bKash Send Money (${BKASH_NUMBER})\n` +
+        `Sender bKash No: ${bkashSender}\n` +
+        `bKash TrxID: ${trxId}`;
+
+      document.getElementById('rec-whatsapp-link').href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waReceipt)}`;
+
+      // Advance Stepper to Step 3 & Open Modal
+      setStepperState(3);
+      const modal = document.getElementById('order-confirm-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      // Clear TrxID & Cart after confirmed order
+      document.getElementById('bkash-trxid').value = '';
+      cart = [];
+      appliedCoupon = null;
+      document.getElementById('coupon-input').value = '';
+      resetCouponStatusText();
+      saveCart();
+      renderAll();
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('order-confirm-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // =========================================================================
+    // 7. UTILITIES: MOBILE MENU, TOAST & ESCAPE KEY
+    // =========================================================================
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 2800);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeConfirmationModal();
+    });
+
+    // Initialize Page
+    initCart();
+    renderAll();
+  </script>
+</body>
+</html>

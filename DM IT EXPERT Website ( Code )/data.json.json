@@ -1,0 +1,62 @@
+{
+  "site": {
+    "brandName": "DM IT Expert",
+    "whatsapp": "61480820298",
+    "bkashNumber": "01710714858",
+    "email": "contact@dmitexpert.com",
+    "heroTitle": "Digital growth, made practical",
+    "heroSubtitle": "We bring your ads, creative, tracking and follow-up together, so your marketing has a clear job to do."
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "Canva Pro",
+      "regularPrice": 100,
+      "salePrice": 50,
+      "badge": "Sale!",
+      "category": "Design",
+      "image": "https://via.placeholder.com/400x300/0B1120/2563EB?text=Canva+Pro+50+BDT",
+      "shortNote": "আগে একাউন্ট নিবেন পরে টাকা দিবেন"
+    },
+    {
+      "id": 2,
+      "name": "Canva Pro 1 year",
+      "regularPrice": 1200,
+      "salePrice": 500,
+      "badge": "Sale!",
+      "category": "Design",
+      "image": "https://via.placeholder.com/400x300/F8FAFC/0B1120?text=Canva+Pro+1+Year",
+      "shortNote": "Full Access · Own Email · 12 Months"
+    },
+    {
+      "id": 3,
+      "name": "CapCut Pro Premium",
+      "regularPrice": 400,
+      "salePrice": 250,
+      "badge": "Sale!",
+      "category": "Video",
+      "image": "https://via.placeholder.com/400x300/0B1120/FF5A1F?text=CapCut+Pro+250+BDT",
+      "shortNote": "No Watermark · প্রিমিয়াম এডিটিং"
+    },
+    {
+      "id": 4,
+      "name": "Claude Premium",
+      "regularPrice": 1000,
+      "salePrice": 650,
+      "badge": "Sale!",
+      "category": "AI",
+      "image": "https://via.placeholder.com/400x300/F8FAFC/2563EB?text=Claude+Premium+650+BDT",
+      "shortNote": "Coding, Writing & Analysis AI"
+    },
+    {
+      "id": 5,
+      "name": "Gemini Pro + 5TB Cloud Storage",
+      "regularPrice": 800,
+      "salePrice": 499,
+      "badge": "Sale!",
+      "category": "AI",
+      "image": "https://via.placeholder.com/400x300/0B1120/2563EB?text=Gemini+Pro+5TB",
+      "shortNote": "Docs & Gmail AI · 5TB Drive"
+    }
+  ]
+}

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paid Tool | DM IT Expert — Digital Subscriptions & Tools Shop</title>
+  <meta name="description" content="Shop verified Paid Tools including Canva Pro, CapCut Pro, Claude Premium, and Gemini Pro + 5TB Cloud Storage from DM IT Expert with bKash Send Money checkout." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (700, 800), Inter (400, 500, 600) & Hind Siliguri for crisp Bengali promo text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Hind Siliguri', 'sans-serif'],
+            bangla: ['Hind Siliguri', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#0B1120',
+              900: '#111827',
+              800: '#1E293B',
+            },
+            offwhite: '#F8FAFC',
+            brandblue: '#2563EB',
+            signal: '#FF5A1F',
+            bkash: '#E2136E',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Clean Product Card Elevation */
+    .woo-card {
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .woo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px -12px rgba(11, 17, 32, 0.14);
+    }
+
+    /* Slide-over Cart Drawer Transition */
+    #cart-drawer-panel {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Custom subtle scrollbar for modal & cart */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0B1120] font-sans antialiased selection:bg-[#2563EB] selection:text-white flex flex-col min-h-screen">
+
+  <!-- ===================================================================== -->
+  <!-- 1. STICKY TOP NAVIGATION BAR (Deep Navy #0B1120)                      -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-[#0B1120]/95 backdrop-blur-md border-b border-[#1E293B]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+
+      <!-- Left: Custom Flat SVG Logo "The Upward Pivot" -->
+      <a href="index.html" class="flex items-center shrink-0 focus:outline-none" aria-label="DM IT Expert Home">
+        <svg width="190" height="40" viewBox="0 0 245 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-9 sm:h-10 w-auto">
+          <text x="0" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+          <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+          <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+          <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#FF5A1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="98" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+          <text x="1" y="47" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+        </svg>
+      </a>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main Navigation">
+        <a href="index.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Home</a>
+        <a href="services.html" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Services</a>
+        <a href="shop.html" aria-current="page" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-white bg-[#111827] border border-[#2563EB]/50 inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]"></span>
+          <span>Paid Tool</span>
+        </a>
+        <a href="index.html#page-approach" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Our Approach</a>
+        <a href="index.html#page-about" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Who We Are</a>
+        <a href="#whatsapp-help-banner" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-[#111827] transition">Contact</a>
+      </nav>
+
+      <!-- Right: Live Cart Button (Badge + Total BDT Preview) & Mobile Hamburger -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <button type="button" href="shop.html">Paid Tool</a>" aria-label="Open shopping cart" class="relative px-3.5 py-2.5 rounded-xl bg-[#111827] hover:bg-[#1E293B] border border-[#1E293B] text-white transition inline-flex items-center gap-2.5">
+          <div class="relative">
+            <i data-lucide="shopping-cart" class="w-5 h-5 text-[#2563EB]"></i>
+            <span id="header-cart-count" class="absolute -top-2 -right-2.5 min-w-[19px] h-[19px] px-1 rounded-full bg-[#FF5A1F] text-white text-[11px] font-bold flex items-center justify-center shadow">0</span>
+          </div>
+          <span id="header-cart-total" class="hidden sm:inline text-sm font-display font-bold text-slate-100 pl-1 border-l border-[#1E293B]">0.00৳</span>
+        </button>
+
+        <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-xl bg-[#111827] border border-[#1E293B] text-slate-200 hover:text-white transition">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#111827] border-b border-[#1E293B] px-4 pt-3 pb-5">
+      <div class="flex flex-col space-y-1.5">
+        <a href="index.html" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Home</a>
+        <a href="services.html" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Services</a>
+        <a href="shop.html" class="px-4 py-3 rounded-xl text-sm font-semibold text-white bg-[#0B1120] border border-[#2563EB]/50 flex items-center justify-between">
+          <span>Paid Tool</span>
+          <span class="w-2 h-2 rounded-full bg-[#FF5A1F]"></span>
+        </a>
+        <a href="index.html#page-approach" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Our Approach</a>
+        <a href="index.html#page-about" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Who We Are</a>
+        <a href="#whatsapp-help-banner" onclick="toggleMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1E293B]">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN CONTENT: CLEAN WOOCOMMERCE-STYLE "PAID TOOL" SHOP                -->
+  <!-- ===================================================================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+
+    <!-- 2. Clean Shop Header (Matching Screenshot Layout) -->
+    <div class="mb-8">
+      <div class="flex flex-wrap items-center gap-3 mb-2">
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-[#0B1120] tracking-tight">Paid Tool</h1>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2136E]/10 text-[#E2136E] text-xs font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E2136E]"></span>
+          bKash Send Money Ready
+        </span>
+      </div>
+
+      <!-- Sub-bar: Result Count (Left) + Sorting Dropdown (Right) -->
+      <div class="mt-4 pb-5 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <p id="results-count" class="text-sm text-slate-500 font-medium">Showing all 5 results</p>
+
+        <div class="flex items-center gap-2.5">
+          <label for="sort-select" class="sr-only">Sort products</label>
+          <div class="relative w-full sm:w-60">
+            <select id="sort-select" onchange="handleSortChange(this.value)" class="w-full appearance-none bg-white border border-slate-200 hover:border-[#2563EB] focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 rounded-xl pl-4 pr-10 py-2.5 text-sm font-medium text-[#0B1120] shadow-sm focus:outline-none cursor-pointer transition">
+              <option value="default">Default sorting</option>
+              <option value="price-asc">Sort by price: low to high</option>
+              <option value="price-desc">Sort by price: high to low</option>
+              <option value="discount-desc">Sort by highest discount</option>
+            </select>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 4-Column Responsive Product Grid (Matching Screenshot Cards) -->
+    <!--
+      HOW TO SWAP CUSTOM PRODUCT IMAGES:
+      In the JavaScript PRODUCTS array below, each product has a custom pure HTML/CSS/SVG
+      promotional artwork (`artworkHtml`). To use your own uploaded image file instead,
+      set `imageUrl: 'your-image.jpg'` on any product object and it will automatically render
+      inside the 1:1 square thumbnail frame with fallback protection.
+    -->
+    <section aria-label="Paid Tool Products">
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 5 Product Cards dynamically rendered here -->
+      </div>
+    </section>
+
+    <!-- 6. "Need Help? Contact us on WhatsApp" Banner Below Product Grid -->
+    <section id="whatsapp-help-banner" class="mt-16">
+      <div class="bg-[#0B1120] border border-[#1E293B] rounded-3xl p-7 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white">Need Help? Contact us on WhatsApp</h2>
+            <p class="text-sm text-slate-300 mt-1">
+              Have a question about tool activation, bKash payment, or custom agency bundles? Chat directly with DM IT Expert.
+            </p>
+          </div>
+        </div>
+        <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%20need%20help%20with%20a%20Paid%20Tool%20order." target="_blank" rel="noopener noreferrer" class="shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base transition shadow-lg shadow-emerald-600/25 inline-flex items-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>WhatsApp: +61 480 820 298</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 7. COMPACT AGENCY FOOTER (Deep Navy #0B1120)                          -->
+  <!-- ===================================================================== -->
+  <footer class="bg-[#0B1120] border-t border-[#1E293B] text-slate-300 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-[#1E293B]">
+        <!-- Brand Logo -->
+        <div>
+          <a href="index.html" class="inline-block" aria-label="DM IT Expert Home">
+            <svg width="176" height="38" viewBox="0 0 245 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-auto">
+              <text x="0" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">DM</text>
+              <path d="M52 16C52 12.6863 54.6863 10 58 10H84C87.3137 10 90 12.6863 90 16V33C90 36.3137 87.3137 39 84 39H58C54.6863 39 52 36.3137 52 33V16Z" fill="#2563EB" />
+              <text x="58.5" y="32.5" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.02em">IT</text>
+              <path d="M81 13L92 2M92 2H84M92 2V10" stroke="#FF5A1F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+              <text x="98" y="34" fill="#F8FAFC" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em">EXPERT</text>
+              <text x="1" y="47" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="9" letter-spacing="0.14em">EMPOWERING YOUR DIGITAL FUTURE</text>
+            </svg>
+          </a>
+          <p class="text-xs text-slate-400 mt-2">Digital growth, made practical. Australia · Bangladesh · Worldwide</p>
+        </div>
+
+        <!-- Direct Contact Links -->
+        <div class="flex flex-wrap items-center gap-5 text-sm">
+          <a href="https://wa.me/61480820298" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition inline-flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>+61 480 820 298</span>
+          </a>
+          <a href="mailto:contact@dmitexpert.com" class="hover:text-[#2563EB] transition inline-flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-[#2563EB]"></i>
+            <span>contact@dmitexpert.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <p>© 2026 DM IT Expert. All rights reserved.</p>
+        <p>dmitexpert.com · Verified Paid Tools</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 4. SLIDE-OVER SHOPPING CART DRAWER                                    -->
+  <!-- ===================================================================== -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <!-- Backdrop -->
+    <div onclick="closeCartDrawer()" class="absolute inset-0 bg-[#0B1120]/70 backdrop-blur-sm"></div>
+
+    <!-- Right Slide-over Panel -->
+    <div id="cart-drawer-panel" class="absolute top-0 right-0 h-full w-full max-w-md bg-white text-[#0B1120] shadow-2xl flex flex-col translate-x-full">
+      <!-- Drawer Header -->
+      <div class="px-6 py-5 bg-[#0B1120] text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="shopping-cart" class="w-5 h-5 text-[#2563EB]"></i>
+          <h3 class="font-display font-extrabold text-lg">Your Cart</h3>
+          <span id="drawer-count-badge" class="px-2.5 py-0.5 rounded-full bg-[#FF5A1F] text-white text-xs font-bold">0</span>
+        </div>
+        <button type="button" onclick="closeCartDrawer()" aria-label="Close cart" class="p-2 rounded-xl bg-[#111827] hover:bg-[#1E293B] text-slate-300 hover:text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Items List -->
+      <div id="drawer-items-list" class="flex-1 overflow-y-auto custom-scroll p-5 space-y-3 bg-[#F8FAFC]">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="p-6 bg-white border-t border-slate-200 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-500">Subtotal</span>
+          <span id="drawer-subtotal" class="font-display font-extrabold text-2xl text-[#0B1120]">0.00৳</span>
+        </div>
+        <button type="button" onclick="openCheckoutModal('cart')" class="w-full py-3.5 px-5 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-sm sm:text-base transition shadow-lg shadow-[#FF5A1F]/25 flex items-center justify-center gap-2">
+          <span>Proceed to Checkout</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 5 & 6. COMPLETE CHECKOUT, BKASH PAYMENT & ORDER CONFIRMATION MODAL    -->
+  <!-- ===================================================================== -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <!-- Backdrop -->
+    <div onclick="closeCheckoutModal()" class="absolute inset-0 bg-[#0B1120]/80 backdrop-blur-sm"></div>
+
+    <!-- Modal Container -->
+    <div class="relative z-10 w-full max-w-4xl bg-white text-[#0B1120] rounded-3xl shadow-2xl overflow-hidden max-h-[94vh] flex flex-col border border-slate-200">
+
+      <!-- Modal Top Header -->
+      <div class="bg-[#0B1120] text-white px-6 py-4 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#2563EB]/20 text-[#2563EB] flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 id="checkout-modal-title" class="font-display font-extrabold text-lg sm:text-xl leading-tight">Checkout &amp; bKash Payment</h2>
+            <p class="text-xs text-slate-400">Fast verification &amp; instant digital delivery</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeCheckoutModal()" aria-label="Close checkout" class="p-2 rounded-xl bg-[#111827] hover:bg-[#1E293B] text-slate-300 hover:text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- VIEW A: TWO-COLUMN CHECKOUT FORM -->
+      <div id="checkout-form-view" class="overflow-y-auto custom-scroll p-5 sm:p-7">
+        <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)" novalidate>
+          <div class="grid lg:grid-cols-12 gap-6 items-start">
+
+            <!-- LEFT COLUMN (5 cols): Billing & Delivery Form -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 space-y-4">
+                <h3 class="font-display font-bold text-base text-[#0B1120] pb-3 border-b border-slate-200 flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-[#2563EB] text-white text-xs font-bold flex items-center justify-center">1</span>
+                  <span>Billing &amp; Delivery Details</span>
+                </h3>
+
+                <div>
+                  <label for="co-name" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Full Name (Name) <span class="text-[#FF5A1F]">*</span></label>
+                  <input id="co-name" type="text" required placeholder="Enter your full name" class="w-full px-3.5 py-3 rounded-xl bg-white border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+                </div>
+
+                <div>
+                  <label for="co-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number (Phone) <span class="text-[#FF5A1F]">*</span></label>
+                  <input id="co-phone" type="tel" required placeholder="01XXXXXXXXX" class="w-full px-3.5 py-3 rounded-xl bg-white border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+                </div>
+
+                <div>
+                  <label for="co-email" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Email Address (Email) <span class="text-[#FF5A1F]">*</span></label>
+                  <input id="co-email" type="email" required placeholder="you@gmail.com" class="w-full px-3.5 py-3 rounded-xl bg-white border border-slate-300 text-sm text-[#0B1120] placeholder-slate-400 focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition" />
+                  <p class="text-[11px] text-slate-500 mt-1">Used for tool activation &amp; subscription delivery.</p>
+                </div>
+              </div>
+
+              <!-- Quick WhatsApp Help inside Checkout -->
+              <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex items-center justify-between gap-3">
+                <div class="text-xs text-emerald-900">
+                  <p class="font-bold">Need help ordering?</p>
+                  <p class="text-emerald-700">WhatsApp: +61 480 820 298</p>
+                </div>
+                <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%20need%20help%20with%20my%20checkout." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold transition shrink-0">
+                  Chat Now
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN (7 cols): Order Summary + bKash Send Money -->
+            <div class="lg:col-span-7 space-y-4">
+
+              <!-- Compact Order Summary -->
+              <div class="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                  <h3 class="font-display font-bold text-base text-[#0B1120]">Order Summary</h3>
+                  <span id="co-item-count" class="text-xs font-bold text-[#2563EB] bg-[#2563EB]/10 px-2.5 py-0.5 rounded-full">0 Items</span>
+                </div>
+                <ul id="co-summary-list" class="py-3 space-y-2 text-sm max-h-36 overflow-y-auto custom-scroll">
+                  <!-- Populated dynamically -->
+                </ul>
+                <div class="pt-3 border-t border-slate-200 flex items-center justify-between">
+                  <span class="font-display font-bold text-sm text-slate-600">Total Payable</span>
+                  <span id="co-summary-total" class="font-display font-extrabold text-xl text-[#0B1120]">0.00৳</span>
+                </div>
+              </div>
+
+              <!-- bKash Send Money Box (Pre-selected by default) -->
+              <div class="bg-[#E2136E]/[0.04] border-2 border-[#E2136E] rounded-2xl p-5 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E2136E]/20">
+                  <label class="flex items-center gap-2.5 cursor-pointer">
+                    <input type="radio" name="payment-method" value="bKash Send Money" checked class="w-4 h-4 accent-[#E2136E]" />
+                    <span class="font-display font-extrabold text-base text-[#0B1120]">bKash Send Money</span>
+                  </label>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E2136E] text-white text-[11px] font-bold">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M4 17L12 4L20 13L13 20L4 17Z" fill="white"/>
+                    </svg>
+                    <span>Personal · Pre-selected</span>
+                  </span>
+                </div>
+
+                <!-- Step-by-Step Instructions + Copy Number -->
+                <div class="bg-white border border-[#E2136E]/20 rounded-xl p-4 space-y-3">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <p class="text-[11px] font-semibold text-slate-500">bKash Personal Number (Send Money):</p>
+                      <p class="font-display font-extrabold text-xl tracking-wider text-[#0B1120]">01710714858</p>
+                    </div>
+                    <button type="button" onclick="copyBkashNumber()" class="px-4 py-2 rounded-xl bg-[#E2136E] hover:bg-[#c5105f] text-white text-xs font-bold transition inline-flex items-center justify-center gap-1.5 shrink-0">
+                      <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                      <span id="copy-bkash-text">Copy Number</span>
+                    </button>
+                  </div>
+                  <ol class="text-xs text-slate-600 space-y-1 list-decimal list-inside leading-relaxed">
+                    <li>Open your <strong>bKash App</strong> and tap <strong>Send Money</strong>.</li>
+                    <li>Send <strong id="co-bkash-amount" class="text-[#E2136E]">0.00৳</strong> to <strong>01710714858</strong> (Personal).</li>
+                    <li>Enter your sender bKash number &amp; Transaction ID (TrxID) below.</li>
+                  </ol>
+                </div>
+
+                <!-- Sender bKash Number & TrxID -->
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div>
+                    <label for="co-bkash-sender" class="block text-[11px] font-bold text-slate-700 mb-1.5">Your bKash Number (যে নম্বর থেকে টাকা পাঠিয়েছেন) <span class="text-[#E2136E]">*</span></label>
+                    <input id="co-bkash-sender" type="tel" required placeholder="017XXXXXXXX" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2136E]/40 text-sm text-[#0B1120] placeholder-slate-400 focus:outline-none focus:border-[#E2136E] focus:ring-2 focus:ring-[#E2136E]/15 transition" />
+                  </div>
+                  <div>
+                    <label for="co-bkash-trxid" class="block text-[11px] font-bold text-slate-700 mb-1.5">bKash Transaction ID (TrxID) <span class="text-[#E2136E]">*</span></label>
+                    <input id="co-bkash-trxid" type="text" required placeholder="e.g. 9K7A2B4C1D" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#E2136E]/40 text-sm text-[#0B1120] uppercase placeholder-slate-400 focus:outline-none focus:border-[#E2136E] focus:ring-2 focus:ring-[#E2136E]/15 transition" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inline Error Box (No alert()) -->
+              <div id="co-error-box" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium flex items-start gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                <span id="co-error-text"></span>
+              </div>
+
+              <!-- Primary Confirm Order Button -->
+              <button type="submit" id="co-submit-btn" class="w-full py-4 px-6 rounded-2xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-display font-bold text-base transition shadow-xl shadow-[#FF5A1F]/25 flex items-center justify-center gap-2">
+                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                <span id="co-submit-label">Confirm Order (0.00৳)</span>
+              </button>
+
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- VIEW B: ORDER CONFIRMED RECEIPT + DIRECT WHATSAPP OPTION -->
+      <div id="checkout-receipt-view" class="hidden overflow-y-auto custom-scroll p-6 sm:p-8 text-center">
+        <div class="max-w-lg mx-auto">
+          <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="check-circle-2" class="w-9 h-9"></i>
+          </div>
+
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-[#0B1120]">Order Confirmed!</h3>
+          <p class="text-sm text-slate-600 mt-1.5">
+            Thank you! Your order <strong id="rec-order-id" class="text-[#2563EB]">DM-2026-0000</strong> has been received.
+          </p>
+
+          <!-- Receipt Summary Card -->
+          <div class="mt-6 text-left bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 space-y-2.5 text-sm">
+            <div class="flex justify-between gap-2">
+              <span class="text-slate-500">Customer Name</span>
+              <span id="rec-name" class="font-semibold text-[#0B1120] text-right"></span>
+            </div>
+            <div class="flex justify-between gap-2">
+              <span class="text-slate-500">Phone</span>
+              <span id="rec-phone" class="font-semibold text-[#0B1120] text-right"></span>
+            </div>
+            <div class="flex justify-between gap-2">
+              <span class="text-slate-500">Delivery Email</span>
+              <span id="rec-email" class="font-semibold text-[#0B1120] text-right break-all"></span>
+            </div>
+            <div class="pt-2.5 mt-2 border-t border-slate-200">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Ordered Tool(s)</p>
+              <ul id="rec-items" class="space-y-1 text-xs sm:text-sm text-slate-700"></ul>
+            </div>
+            <div class="pt-2.5 mt-2 border-t border-slate-200 flex justify-between gap-2">
+              <span class="text-slate-500">Sender bKash No</span>
+              <span id="rec-bkash-sender" class="font-semibold text-[#0B1120]"></span>
+            </div>
+            <div class="flex justify-between gap-2">
+              <span class="text-slate-500">bKash TrxID</span>
+              <span id="rec-trxid" class="font-display font-bold text-[#E2136E] uppercase"></span>
+            </div>
+            <div class="flex justify-between gap-2 pt-2 border-t border-slate-200">
+              <span class="font-bold text-[#0B1120]">Total Paid</span>
+              <span id="rec-total" class="font-display font-extrabold text-lg text-[#FF5A1F]"></span>
+            </div>
+          </div>
+
+          <!-- Prominent Green WhatsApp Button -->
+          <div class="mt-6 space-y-3">
+            <a id="rec-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-display font-bold text-base transition shadow-xl shadow-emerald-600/25 flex items-center justify-center gap-2.5">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Send Order Details on WhatsApp →</span>
+            </a>
+            <button type="button" onclick="closeCheckoutModal()" class="w-full py-2.5 rounded-xl text-sm font-semibold text-slate-500 hover:text-[#0B1120] transition">
+              Back to Paid Tool Shop
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING WHATSAPP BUTTON (Bottom-Right)                               -->
+  <!-- ===================================================================== -->
+  <a href="https://wa.me/61480820298?text=Hi%20DM%20IT%20Expert!%20I%27m%20interested%20in%20your%20Paid%20Tools." target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" class="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl shadow-emerald-900/35 transition-transform hover:scale-105">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span class="text-sm font-semibold hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- ===================================================================== -->
+  <!-- TOAST NOTIFICATION (Replaces alert())                                 -->
+  <!-- ===================================================================== -->
+  <div id="toast" class="fixed bottom-20 right-5 z-50 hidden items-center gap-3 bg-[#0B1120] border border-[#2563EB] text-white px-4 py-3 rounded-xl shadow-2xl text-sm font-medium max-w-xs sm:max-w-sm">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#FF5A1F] shrink-0"></i>
+    <span id="toast-message" class="flex-1"></span>
+    <button id="toast-cart-btn" type="button" onclick="openCartDrawer()" class="hidden text-xs font-bold text-[#60A5FA] hover:text-white underline shrink-0">View Cart</button>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: 5 PAID TOOLS, SORTING, CART, BKASH & WHATSAPP CHECKOUT    -->
+  <!-- ===================================================================== -->
+  <script>
+    // =========================================================================
+    // PRODUCT DATA (EXACT 5 PRODUCTS FROM SCREENSHOT)
+    // Tip: Set `imageUrl: 'your-photo.jpg'` on any item to replace the built-in
+    //      HTML/CSS/SVG promotional artwork with your own custom image file.
+    // =========================================================================
+    const PRODUCTS = [
+      {
+        id: 'canva-pro',
+        orderIndex: 0,
+        title: 'Canva Pro',
+        regularPrice: 100.00,
+        salePrice: 50.00,
+        imageUrl: '', // <-- Optional: paste your own image URL here
+        artworkHtml: `
+          <div class="w-full h-full bg-gradient-to-br from-[#042f2e] via-[#0b192c] to-[#083344] p-4 flex flex-col justify-between relative overflow-hidden text-white select-none">
+            <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-cyan-400/20 blur-xl"></div>
+            <div class="absolute -bottom-8 -left-6 w-28 h-28 rounded-full bg-teal-400/20 blur-xl"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-white/10 text-cyan-200">DM IT Expert</span>
+              <span class="text-[10px] font-semibold text-teal-300">Instant Access</span>
+            </div>
+            <div class="flex flex-col items-center text-center relative z-10 my-auto">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-[#00C4CC] via-[#2563EB] to-[#7D2AE8] flex items-center justify-center shadow-lg shadow-cyan-500/30 mb-2.5 border-2 border-white/25">
+                <span class="font-display font-extrabold text-lg italic tracking-tight text-white">Canva</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-display font-extrabold text-xl tracking-tight">Canva</span>
+                <span class="px-1.5 py-0.5 rounded bg-cyan-400 text-[#0B1120] text-[10px] font-extrabold uppercase">PRO</span>
+              </div>
+              <p class="font-bangla font-bold text-sm sm:text-base text-cyan-300 mt-1">মাত্র ৫০ টাকায়</p>
+            </div>
+            <div class="text-center relative z-10">
+              <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-bangla text-slate-200">আগে একাউন্ট নিবেন পরে টাকা দিবেন</span>
+            </div>
+          </div>`
+      },
+      {
+        id: 'canva-pro-1-year',
+        orderIndex: 1,
+        title: 'Canva Pro 1 year',
+        regularPrice: 1200.00,
+        salePrice: 500.00,
+        imageUrl: '', // <-- Optional: paste your own image URL here
+        artworkHtml: `
+          <div class="w-full h-full bg-gradient-to-br from-[#fff1f2] via-[#eff6ff] to-[#dbeafe] p-4 flex flex-col justify-between relative overflow-hidden text-[#0B1120] select-none">
+            <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-[#FF5A1F]/15"></div>
+            <div class="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-[#2563EB]/15"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#2563EB] text-white">1 Year Plan</span>
+              <span class="text-[10px] font-bold text-[#FF5A1F]">★ Verified</span>
+            </div>
+            <div class="flex flex-col items-center text-center relative z-10 my-auto">
+              <div class="w-16 h-16 rounded-2xl bg-white shadow-md border border-blue-100 flex items-center justify-center mb-2.5">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <circle cx="18" cy="18" r="16" fill="url(#canva1yr)"/>
+                  <path d="M23 13.5C21.2 11.8 18.2 11.4 15.8 12.6C12.8 14.1 12 18.4 13.8 21.5C15.5 24.4 19.8 24.8 23 22.4" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="canva1yr" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#00C4CC"/>
+                      <stop offset="1" stop-color="#2563EB"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <p class="font-display font-extrabold text-lg text-[#0B1120] leading-tight">Canva Pro 1 Year</p>
+              <p class="text-xs font-semibold text-[#2563EB] mt-0.5">Full Access · Own Email</p>
+            </div>
+            <div class="flex items-center justify-center gap-1.5 relative z-10">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#FF5A1F] text-white text-[10px] font-bold">500৳ Only</span>
+              <span class="px-2 py-0.5 rounded-full bg-white text-slate-600 text-[10px] font-semibold border border-slate-200">12 Months</span>
+            </div>
+          </div>`
+      },
+      {
+        id: 'capcut-pro-premium',
+        orderIndex: 2,
+        title: 'CapCut Pro Premium',
+        regularPrice: 400.00,
+        salePrice: 250.00,
+        imageUrl: '', // <-- Optional: paste your own image URL here
+        artworkHtml: `
+          <div class="w-full h-full bg-gradient-to-br from-[#090d1f] via-[#1e1b4b] to-[#311042] p-4 flex flex-col justify-between relative overflow-hidden text-white select-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-fuchsia-500/20 blur-2xl"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/30 border border-indigo-400/30 text-indigo-200">CapCut Pro</span>
+              <span class="text-amber-400 text-xs font-bold">👑 Pro</span>
+            </div>
+            <div class="flex flex-col items-center text-center relative z-10 my-auto">
+              <p class="font-bangla font-bold text-sm text-amber-300 leading-snug">প্রিমিয়াম এডিটিং এখন সহজ</p>
+              <div class="my-2.5 w-14 h-14 rounded-2xl bg-white text-[#0B1120] flex items-center justify-center shadow-lg shadow-purple-500/30">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M6 10L24 22M24 10L6 22" stroke="#0B1120" stroke-width="3.2" stroke-linecap="round"/>
+                  <rect x="6" y="7" width="16" height="18" rx="3" stroke="#0B1120" stroke-width="2.4"/>
+                </svg>
+              </div>
+              <p class="font-display font-extrabold text-base tracking-tight">CapCut Pro</p>
+            </div>
+            <div class="flex items-center justify-center gap-2 relative z-10 text-[10px] text-slate-300">
+              <span class="px-2 py-0.5 rounded bg-white/10">No Watermark</span>
+              <span class="px-2 py-0.5 rounded bg-[#FF5A1F] text-white font-bold">250৳</span>
+            </div>
+          </div>`
+      },
+      {
+        id: 'claude-premium',
+        orderIndex: 3,
+        title: 'Claude Premium',
+        regularPrice: 1000.00,
+        salePrice: 650.00,
+        imageUrl: '', // <-- Optional: paste your own image URL here
+        artworkHtml: `
+          <div class="w-full h-full bg-gradient-to-br from-[#ffffff] via-[#f1f5f9] to-[#dbeafe] p-4 flex flex-col justify-between relative overflow-hidden text-[#0B1120] select-none border border-slate-100">
+            <div class="flex items-center justify-between relative z-10">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-[#2563EB]">Official Subscription</span>
+              <span class="px-2 py-0.5 rounded-full bg-[#2563EB] text-white text-[10px] font-bold">650৳</span>
+            </div>
+            <div class="flex flex-col items-center text-center relative z-10 my-auto">
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-md border border-blue-100 flex items-center justify-center mb-2">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M16 4V28M4 16H28M7.5 7.5L24.5 24.5M24.5 7.5L7.5 24.5" stroke="#FF5A1F" stroke-width="2.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-display font-extrabold text-lg text-[#0B1120]">Claude</span>
+                <span class="px-1.5 py-0.5 rounded bg-[#2563EB] text-white text-[10px] font-bold">Premium</span>
+              </div>
+              <p class="text-[11px] font-medium text-slate-600 mt-0.5">Coding, Writing &amp; Analysis AI</p>
+            </div>
+            <div class="bg-[#2563EB] text-white rounded-lg py-1 px-2.5 text-center relative z-10">
+              <span class="text-[10px] font-bold tracking-wide">650৳ / Month · Verified Access</span>
+            </div>
+          </div>`
+      },
+      {
+        id: 'gemini-pro-5tb',
+        orderIndex: 4,
+        title: 'Gemini Pro + 5TB Cloud Storage',
+        regularPrice: 800.00,
+        salePrice: 499.00,
+        imageUrl: '', // <-- Optional: paste your own image URL here
+        artworkHtml: `
+          <div class="w-full h-full bg-gradient-to-br from-[#0B1120] via-[#172554] to-[#0284c7] p-4 flex flex-col justify-between relative overflow-hidden text-white select-none">
+            <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-sky-400/25 blur-xl"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500/25 text-sky-200 border border-sky-400/30">AI + Cloud</span>
+              <span class="px-2 py-0.5 rounded bg-[#FF5A1F] text-white text-[10px] font-bold">499৳</span>
+            </div>
+            <div class="flex flex-col items-center text-center relative z-10 my-auto">
+              <div class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-2 shadow-lg">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M16 3C16.8 10.5 21.5 15.2 29 16C21.5 16.8 16.8 21.5 16 29C15.2 21.5 10.5 16.8 3 16C10.5 15.2 15.2 10.5 16 3Z" fill="url(#gemGrad)"/>
+                  <defs>
+                    <linearGradient id="gemGrad" x1="3" y1="3" x2="29" y2="29" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#38BDF8"/>
+                      <stop offset="1" stop-color="#FFFFFF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <p class="font-display font-extrabold text-base leading-tight">Gemini Pro AI</p>
+              <p class="text-xs font-bold text-sky-300 mt-0.5">+ 5TB Cloud Storage</p>
+            </div>
+            <div class="flex items-center justify-center gap-1.5 relative z-10 text-[10px]">
+              <span class="px-2 py-0.5 rounded bg-white/10 text-sky-100">Docs &amp; Gmail AI</span>
+              <span class="px-2 py-0.5 rounded bg-white/10 text-sky-100">5TB Drive</span>
+            </div>
+          </div>`
+      }
+    ];
+
+    // =========================================================================
+    // STATE MANAGEMENT
+    // =========================================================================
+    let currentSort = 'default';
+    let cart = []; // [{ id, qty }]
+    let checkoutMode = 'cart'; // 'cart' | 'buy-now'
+    let buyNowItem = null; // { id, qty: 1 }
+
+    // Format BDT price matching screenshot style (e.g., 1,200.00৳)
+    function formatBDT(amount) {
+      return amount.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }) + '৳';
+    }
+
+    // =========================================================================
+    // RENDER 4-COLUMN PRODUCT GRID & SORTING
+    // =========================================================================
+    function getSortedProducts() {
+      const list = [...PRODUCTS];
+      if (currentSort === 'price-asc') {
+        list.sort((a, b) => a.salePrice - b.salePrice);
+      } else if (currentSort === 'price-desc') {
+        list.sort((a, b) => b.salePrice - a.salePrice);
+      } else if (currentSort === 'discount-desc') {
+        list.sort((a, b) => {
+          const discA = (a.regularPrice - a.salePrice) / a.regularPrice;
+          const discB = (b.regularPrice - b.salePrice) / b.regularPrice;
+          return discB - discA;
+        });
+      } else {
+        list.sort((a, b) => a.orderIndex - b.orderIndex);
+      }
+      return list;
+    }
+
+    function handleSortChange(value) {
+      currentSort = value;
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      const items = getSortedProducts();
+      document.getElementById('results-count').textContent = `Showing all ${items.length} results`;
+
+      grid.innerHTML = items.map(product => {
+        const mediaContent = product.imageUrl
+          ? `<img src="${product.imageUrl}" alt="${product.title}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /><div style="display:none;" class="w-full h-full">${product.artworkHtml}</div>`
+          : product.artworkHtml;
+
+        return `
+          <article class="woo-card relative bg-white rounded-2xl border border-slate-200/80 shadow-sm p-4 flex flex-col justify-between">
+            <!-- Overlapping Top-Right "Sale!" Pill Badge (Matching Screenshot) -->
+            <span class="absolute -top-2.5 -right-2 z-20 px-3 py-1 rounded-full bg-[#2563EB] text-white text-xs font-bold shadow-md">
+              Sale!
+            </span>
+
+            <div>
+              <!-- Square 1:1 Thumbnail Frame -->
+              <div class="aspect-square w-full rounded-xl overflow-hidden bg-slate-100 mb-4 border border-slate-100">
+                ${mediaContent}
+              </div>
+
+              <!-- Product Title -->
+              <h2 class="font-display font-bold text-base text-[#0B1120] leading-snug min-h-[2.5rem]">
+                ${product.title}
+              </h2>
+
+              <!-- Strikethrough Regular Price + Bold Sale Price -->
+              <div class="mt-2 mb-4 flex items-baseline gap-2 flex-wrap">
+                <span class="text-sm text-slate-400 line-through font-medium">${formatBDT(product.regularPrice)}</span>
+                <span class="font-display font-extrabold text-base text-[#2563EB]">${formatBDT(product.salePrice)}</span>
+              </div>
+            </div>
+
+            <!-- 2 Side-by-Side Equal-Width Buttons: Add to cart (#2563EB) & Buy Now (#FF5A1F) -->
+            <div class="grid grid-cols-2 gap-2.5 pt-1">
+              <button type="button" onclick="addToCart('${product.id}')" class="w-full py-2.5 px-2 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm transition shadow-sm text-center">
+                Add to cart
+              </button>
+              <button type="button" onclick="triggerBuyNow('${product.id}')" class="w-full py-2.5 px-2 rounded-xl bg-[#FF5A1F] hover:bg-[#e54b14] text-white font-semibold text-xs sm:text-sm transition shadow-sm text-center">
+                Buy Now
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // =========================================================================
+    // CART LOGIC & SLIDE-OVER DRAWER
+    // =========================================================================
+    function addToCart(productId) {
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: productId, qty: 1 });
+      }
+      updateCartUI();
+      const prod = PRODUCTS.find(p => p.id === productId);
+      showToast(`"${prod.title}" added to cart`, true);
+    }
+
+    function updateCartQty(productId, delta) {
+      const item = cart.find(i => i.id === productId);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== productId);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(productId) {
+      cart = cart.filter(i => i.id !== productId);
+      updateCartUI();
+    }
+
+    function getCartSummary(sourceItems) {
+      let totalQty = 0;
+      let totalPrice = 0;
+      const detailed = sourceItems.map(entry => {
+        const prod = PRODUCTS.find(p => p.id === entry.id);
+        const lineTotal = prod.salePrice * entry.qty;
+        totalQty += entry.qty;
+        totalPrice += lineTotal;
+        return { ...prod, qty: entry.qty, lineTotal };
+      });
+      return { totalQty, totalPrice, detailed };
+    }
+
+    function updateCartUI() {
+      const { totalQty, totalPrice, detailed } = getCartSummary(cart);
+
+      document.getElementById('header-cart-count').textContent = totalQty;
+      document.getElementById('header-cart-total').textContent = formatBDT(totalPrice);
+      document.getElementById('drawer-count-badge').textContent = totalQty;
+      document.getElementById('drawer-subtotal').textContent = formatBDT(totalPrice);
+
+      const listEl = document.getElementById('drawer-items-list');
+      if (detailed.length === 0) {
+        listEl.innerHTML = `
+          <div class="text-center py-12 px-4">
+            <div class="w-14 h-14 rounded-2xl bg-slate-200/70 text-slate-400 flex items-center justify-center mx-auto mb-3">
+              <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+            </div>
+            <p class="font-display font-bold text-base text-[#0B1120]">Your cart is empty</p>
+            <p class="text-xs text-slate-500 mt-1">Add any Paid Tool to proceed with bKash checkout.</p>
+          </div>
+        `;
+      } else {
+        listEl.innerHTML = detailed.map(item => `
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-3 shadow-sm">
+            <div class="min-w-0">
+              <p class="font-display font-bold text-sm text-[#0B1120] truncate">${item.title}</p>
+              <p class="text-xs text-slate-500 mt-0.5">${formatBDT(item.salePrice)} × ${item.qty} = <strong class="text-[#2563EB]">${formatBDT(item.lineTotal)}</strong></p>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="updateCartQty('${item.id}', -1)" aria-label="Decrease quantity" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-[#0B1120] font-bold text-sm flex items-center justify-center">−</button>
+              <span class="w-5 text-center text-xs font-bold">${item.qty}</span>
+              <button type="button" onclick="updateCartQty('${item.id}', 1)" aria-label="Increase quantity" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-[#0B1120] font-bold text-sm flex items-center justify-center">+</button>
+              <button type="button" onclick="removeCartItem('${item.id}')" aria-label="Remove item" class="w-7 h-7 rounded-lg bg-red-50 hover:bg-red-100 text-red-500 flex items-center justify-center ml-1">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+      lucide.createIcons();
+    }
+
+    function openCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const panel = document.getElementById('cart-drawer-panel');
+      drawer.classList.remove('hidden');
+      requestAnimationFrame(() => panel.classList.remove('translate-x-full'));
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const panel = document.getElementById('cart-drawer-panel');
+      panel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+        if (document.getElementById('checkout-modal').classList.contains('hidden')) {
+          document.body.style.overflow = '';
+        }
+      }, 250);
+    }
+
+    // =========================================================================
+    // BUY NOW & CHECKOUT MODAL WITH BKASH SEND MONEY
+    // =========================================================================
+    function triggerBuyNow(productId) {
+      buyNowItem = { id: productId, qty: 1 };
+      openCheckoutModal('buy-now');
+    }
+
+    function openCheckoutModal(mode) {
+      checkoutMode = mode;
+      const activeSource = mode === 'buy-now' && buyNowItem ? [buyNowItem] : cart;
+      const { totalQty, totalPrice, detailed } = getCartSummary(activeSource);
+
+      if (totalQty === 0) {
+        showToast('Your cart is empty. Select a Paid Tool first!', false);
+        return;
+      }
+
+      closeCartDrawer();
+
+      // Reset views to Checkout Form
+      document.getElementById('checkout-form-view').classList.remove('hidden');
+      document.getElementById('checkout-receipt-view').classList.add('hidden');
+      document.getElementById('co-error-box').classList.add('hidden');
+      document.getElementById('checkout-modal-title').textContent = 'Checkout & bKash Payment';
+
+      // Populate Order Summary inside Checkout Modal
+      document.getElementById('co-item-count').textContent = `${totalQty} ${totalQty === 1 ? 'Item' : 'Items'}`;
+      document.getElementById('co-summary-total').textContent = formatBDT(totalPrice);
+      document.getElementById('co-bkash-amount').textContent = formatBDT(totalPrice);
+      document.getElementById('co-submit-label').textContent = `Confirm Order (${formatBDT(totalPrice)})`;
+
+      document.getElementById('co-summary-list').innerHTML = detailed.map(item => `
+        <li class="flex items-center justify-between gap-2 text-xs sm:text-sm">
+          <span class="text-slate-700 font-medium">${item.title} <span class="text-slate-400">× ${item.qty}</span></span>
+          <span class="font-display font-bold text-[#0B1120] shrink-0">${formatBDT(item.lineTotal)}</span>
+        </li>
+      `).join('');
+
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Copy bKash Number (Uses document.execCommand('copy') for iFrame reliability)
+    function copyBkashNumber() {
+      const num = '01710714858';
+      const ta = document.createElement('textarea');
+      ta.value = num;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        const btnText = document.getElementById('copy-bkash-text');
+        btnText.textContent = 'Copied!';
+        showToast('bKash number 01710714858 copied!', false);
+        setTimeout(() => { btnText.textContent = 'Copy Number'; }, 2200);
+      } catch (e) {
+        showToast('bKash Number: 01710714858', false);
+      }
+      document.body.removeChild(ta);
+    }
+
+    function showCheckoutError(msg) {
+      const box = document.getElementById('co-error-box');
+      document.getElementById('co-error-text').textContent = msg;
+      box.classList.remove('hidden');
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Handle Checkout Form Submission & Order Confirmation Receipt
+    function handleCheckoutSubmit(e) {
+      e.preventDefault();
+      document.getElementById('co-error-box').classList.add('hidden');
+
+      const name = document.getElementById('co-name').value.trim();
+      const phone = document.getElementById('co-phone').value.trim();
+      const email = document.getElementById('co-email').value.trim();
+      const bkashSender = document.getElementById('co-bkash-sender').value.trim();
+      const trxId = document.getElementById('co-bkash-trxid').value.trim().toUpperCase();
+
+      if (!name) {
+        showCheckoutError('Please enter your Full Name.');
+        document.getElementById('co-name').focus();
+        return;
+      }
+      if (!phone || phone.length < 8) {
+        showCheckoutError('Please enter a valid Phone Number.');
+        document.getElementById('co-phone').focus();
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        showCheckoutError('Please enter a valid Email Address for tool delivery.');
+        document.getElementById('co-email').focus();
+        return;
+      }
+      if (!bkashSender || bkashSender.length < 10) {
+        showCheckoutError('Please enter Your bKash Number (যে নম্বর থেকে টাকা পাঠিয়েছেন).');
+        document.getElementById('co-bkash-sender').focus();
+        return;
+      }
+      if (!trxId || trxId.length < 5) {
+        showCheckoutError('Please enter your valid bKash Transaction ID (TrxID).');
+        document.getElementById('co-bkash-trxid').focus();
+        return;
+      }
+
+      const activeSource = checkoutMode === 'buy-now' && buyNowItem ? [buyNowItem] : cart;
+      const { totalPrice, detailed } = getCartSummary(activeSource);
+
+      // Generate Unique Order ID: DM-2026-XXXX
+      const orderId = `DM-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      // Populate Receipt View
+      document.getElementById('checkout-modal-title').textContent = 'Order Confirmation Receipt';
+      document.getElementById('rec-order-id').textContent = orderId;
+      document.getElementById('rec-name').textContent = name;
+      document.getElementById('rec-phone').textContent = phone;
+      document.getElementById('rec-email').textContent = email;
+      document.getElementById('rec-bkash-sender').textContent = bkashSender;
+      document.getElementById('rec-trxid').textContent = trxId;
+      document.getElementById('rec-total').textContent = formatBDT(totalPrice);
+
+      document.getElementById('rec-items').innerHTML = detailed.map(item => `
+        <li class="flex justify-between gap-2">
+          <span>• ${item.title} (×${item.qty})</span>
+          <strong class="text-[#0B1120] shrink-0">${formatBDT(item.lineTotal)}</strong>
+        </li>
+      `).join('');
+
+      // Pre-formatted WhatsApp Message to +61 480 820 298
+      const itemsText = detailed
+        .map(item => `- ${item.title} (x${item.qty}) = ${formatBDT(item.lineTotal)}`)
+        .join('\n');
+
+      const waMessage =
+        `Hello DM IT Expert! I just completed a Paid Tool order:\n\n` +
+        `Order ID: ${orderId}\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Email: ${email}\n\n` +
+        `Ordered Tool(s):\n${itemsText}\n\n` +
+        `Total Amount: ${formatBDT(totalPrice)}\n` +
+        `Payment Method: bKash Send Money (01710714858)\n` +
+        `Sender bKash No: ${bkashSender}\n` +
+        `bKash TrxID: ${trxId}`;
+
+      document.getElementById('rec-whatsapp-btn').href =
+        `https://wa.me/61480820298?text=${encodeURIComponent(waMessage)}`;
+
+      // Clear cart if checked out from cart & reset TrxID field
+      if (checkoutMode === 'cart') {
+        cart = [];
+        updateCartUI();
+      } else {
+        buyNowItem = null;
+      }
+      document.getElementById('co-bkash-trxid').value = '';
+
+      // Switch Modal to Receipt View
+      document.getElementById('checkout-form-view').classList.add('hidden');
+      document.getElementById('checkout-receipt-view').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    // =========================================================================
+    // UTILITIES: MOBILE MENU, TOAST & ESC KEY
+    // =========================================================================
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    }
+
+    let toastTimer = null;
+    function showToast(msg, showCartLink = false) {
+      const toast = document.getElementById('toast');
+      const cartBtn = document.getElementById('toast-cart-btn');
+      document.getElementById('toast-message').textContent = msg;
+      cartBtn.classList.toggle('hidden', !showCartLink);
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3200);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCartDrawer();
+        closeCheckoutModal();
+      }
+    });
+
+    // Initialize Shop Page
+    renderProducts();
+    updateCartUI();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
